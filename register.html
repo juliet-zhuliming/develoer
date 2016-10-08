@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UBT Developer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <style type="text/css">
+    small{
+        color: #e08383;
+    }
+    input.error,select.error {
+        border-color: #eca5a5;
+    }
+    </style>
+</head>
+<body>
+<!-- sdk 菜单 -->
+    <div class="container">
+        <div class="sdk-menu" id="sdksub" style="display: none;">
+            <iframe src="sdk_meun.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%"  scrolling=no  height=120 
+                align="center" style="min-width: 1200px;">
+            </iframe>
+        </div>
+    </div>
+    <iframe src="header.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no 
+    height=80 align="center" style="min-width: 1230px;">
+    </iframe>
+    <div class="login-page" id="login-page">
+        <div class="container title_bg">
+            <img src="images/title_bg.png">
+            <div class="regist-title">
+                <h1 lang>Register UBT Account</h1>
+            </div>
+        </div>
+        <div class="account-box">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Please enter your email address" type="text" name="userEmail" id="userEmail" lang/>
+                        <small class="error hide email-error " lang>Input a correct e-mail address</small>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Please enter your password(6-24 characters)" type="password" name="userPassword" id="userPassword" lang/>
+                        <small class="error hide password-error" lang>Input password with 6 to 24 characters in length</small>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control required" placeholder="Confirm password" type="password" name="confirmpassword" id="confirmpassword" lang/>
+                        <small class="error hide confirmpassword-error" lang>The two passwords you entered did not match.</small>
+                    </div>
+                    <div class="form-group">
+                        <small class="error er1001 hide" lang>This email has been registered</small>
+                        <small class="error er1003 hide" ><span lang>The activation mail has been sent,please activate first then login</span>
+                            <a class="enter-mail" href="https://mail.qq.com" target="_blank" lang>Enter mailbox</a>
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn-main full-width" type="button" name="submit" id="submit" lang>Register right now</button>
+                    </div>
+                    <div class="form-group">
+                        <p class="protocal">
+                            <span lang>Click ‘Register right now’ and it means you have agreed to comply with the </span><br>
+                            <span data-target="#user-agreement" data-toggle="modal" style="color: #1590e6;" lang>《UBT User Agreement》</span>&nbsp;
+                            <span lang>and</span>&nbsp;<span  data-target="#private-policy" data-toggle="modal" style="color: #1590e6;" lang>《Privacy Policy》.</span>
+                        </p>
+                        <p class="has-account">
+                            <a href="login.html" target="_self" lang>Already have an account, login>></a>
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+<!-- footer -->
+    <iframe src="footer.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no height=380 
+        style="min-width: 1230px;">
+    </iframe>
+
+<!-- 隐私政策 -->
+<div class="modal fade in" id="private-policy" style="display: none;">
+    <div class="modal-dialog" style="width:800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button" style="font-size: 34px;outline: none;">
+                    ×
+                </button>
+                <h3 class="modal-title">
+                    &nbsp;
+                </h3>
+            </div>
+            <div class="modal-body">
+                <h3>隐私政策</h3>
+                <p>
+                    优必选科技有限公司（以下简称“优必选”）高度重视用户的隐私，并将尽全力保护用户的隐私。您在使用优必选的服务时，我们可能会收集和使用您的相关信息，因此，请务必在使用优必选提供的服务前，阅读、理解并同意本《隐私政策》。您使用或者继续使用我们的服务，即意味着同意我们按照本《隐私政策》收集、使用、存储您的相关信息。
+                </p>
+                <p>
+                    <h4>【优必选可能会收集的信息】</h4>
+                        <p>
+                            为了提供优秀的服务，我们会收集一些与用户相关的个人信息，我们可能收集的信息包括：
+                            <ul>
+                                <li>
+                                    用户使用服务需提供的信息：在使用优必选提供的某些服务时，如注册用户、购买产品等，您可能需要注册账户，此时您需要提供账户信息，例如您的姓名、电话号码、通信地址、电子邮箱、付款方式等个人联系信息。如果您使用优必选服务与朋友共享内容，我们可能需要您提供朋友的联系信息，如姓名/用户名、电话号码、电子邮箱等。
+                                </li>
+                                <li>
+                                    服务使用数据：我们会从您的设备收集系统和应用程序数据，包括设备名称、系统和应用程序版本、地区和语言设置、地理位置、使用习惯和 IP 地址等。我们还会记录服务访问时间、搜索查询词条以及设备上的 Cookie 所保存的数据。
+                                </li>
+                                <li>
+                                    监督用户行为：我们可能会监督我们提供的服务上用户的行为，以保护所有用户，并改善我们的服务。
+                                </li>
+                            </ul>
+                        </p>
+                    <h4>【优必选如何使用这些信息】</h4>
+                    <p>
+                        我们会将您的个人信息用于以下目的：
+                        <ul>
+                            <li>
+                                * 交付、激活或验证产品或服务；应您的要求进行变更；以及提供技术支持。
+                            </li>
+                            <li>
+                               * 在您同意的情况下，向您发送有关您可能感兴趣的产品和服务的信息；邀请您参与促销活动和市场调查；或向您发送营销信息。如果您不想接收此类信息，可以随时退订。 
+                            </li>
+                            <li>
+                                * 向您发送操作系统或应用程序更新和安装的通知。
+                            </li>
+                            <li>
+                                * 为您提供个性化用户体验和个性化内容，并激活售后服务。
+                            </li>
+                            <li>
+                                * 开展内部审计、数据分析和研究，改善我们的产品和服务。
+                            </li>
+                            <li>
+                                * 在您选择向我们发送错误详情的情况下排查错误。
+                            </li>
+                            <li>
+                                * 同步、共享和存储您上传或下载的数据以及执行上传和下载所需的数据。
+                            </li>
+                        </ul>
+                    </p>
+                    <h4>【优必选如何保护用户信息】</h4>
+                    <p>
+                        优必选重视用户信息的安全。我们会采取一切合理可行的措施，保护用户的个人信息安全，防止用户信息数据遭到未经授权的访问、披露、使用、修改、损坏或丢失。例如，我们会使用加密技术确保数据的机密性；我们会使用受信赖的保护机制防止数据遭到恶意攻击；我们会部署访问控制机制，确保只有授权人员才可访问个人数据；我们会举办安全和隐私保护培训课程，加强员工对于保护个人数据重要性的认识。 我们会采取一切合理可行的措施，确保未收集无关的个人数据。我们只会在达成本政策所述目的所需的期限内保留您的个人数据，除非需要延长保留期或受到法律的允许。我们会尽力保护您的个人数据，但是请注意任何安全措施都无法做到无懈可击。
+                    </p>
+                    <h4>【如何联系优必选】</h4>
+                    <p>
+                       如果您对本政策有任何疑问，可通过电子邮箱。。。与我们联系。
+                    </p>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 用户协议 -->
+<div class="modal fade in" id="user-agreement" style="display: none;">
+    <div class="modal-dialog" style="width:800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button" style="font-size: 34px;outline: none;">
+                    ×
+                </button>
+                <h3 class="modal-title">
+                    &nbsp;
+                </h3>
+            </div>
+            <div class="modal-body" style="height: 800px;overflow-y: auto">
+                <h3>
+                    最终用户许可协议
+                </h3>
+                <p>
+                    本协议适用于深圳市优必选科技有限公司向您提供的SDK（软件开发工具包）和文档，SDK指以目标代码格式存在的软件开发工具包，以及其更新、升级或者其他属性、工具或者增强版。“文档”系指附属于SDK的任何在线文件、帮助文档或者其他有关的解释材料。您同意根据本最终用户许可协议（“本协议”）中规定的条款使用SDK，并且您同意成为本协议的一方当事人并受本协议的约束，您保证您已经达到法定民事行为责任年龄并且您拥有签署合同的法律资格。您必须明确接受本协议的条款和条件，才能使用SDK。如果您不接受本协议的条款和条件，则您不能安装或者使用SDK。
+                </p>
+                <p>
+                    <h4>
+                        使用许可
+                    </h4>
+                    <p>
+                        SDK和文档是由优必选公司许可给您的。受本协议条款的约束，您被授予一项有限的、全球性的、非排他性的、不得再许可的并且不可转让的使用权，以便将SDK用于开发在优必选机器人产品上运行的应用程序，该应用程序只包含本软件开发工具包允许的功能，文档对功能会有详细的描述。
+                    </p>
+                    <p>
+                        您只能根据本协议条件使用SDK或者文档。并且，不得将SDK或者文档用于经营您或者您的雇主的业务、开发除正在使用的应用程序之外的应用或其它应用，或者向其他人提供服务。除非事先获得优必选的书面同意，您不得：
+                        <ul>
+                           <li>
+                                （a）以任何方式（包括但不限于定制、翻译或者本地化）篡改、修改或者创造SDK的任何派生作品、基础源代码或者文档；
+                            </li>
+                            <li>
+                                （b）对SDK的任何部分进行改编、反向编译、反向汇编、反向工程或者试图以其他方式加以分离，或者运行SDK的源代码（除非适用的法律特别禁止该等限制）；
+                            </li>
+                            <li>
+                                （c）对SDK或者文档进行复制、再次销售、设置权利担保、销售、出租、租赁、分许可或者以其他方式转让其上的权利；
+                            </li>
+                            <li>
+                                （d）删除或者篡改SDK或者文档中的任何商标、标记、著作权或者其他权利声明、图例、标志或者标签；
+                            </li>
+                            <li>
+                                （e）阻止、禁用或者以其他方式影响构成SDK一个组成部分的任何广告、广告窗口，指向其他网站、服务或者其他属性的链接；
+                            </li>
+                            <li>
+                                （f）将SDK的任何部分加载到优必选机器人之外的硬件设备，将SDK的任何部分连接到其他软件或者销售构成SDK一个部分的任何软件或者设备。除非优必选给予书面批准，您不得将任何执行程序的结果或者功能评估结果披露给任何第三方。
+                            </li>
+                        </ul>
+                        <p>
+                            SDK可能包括从优必选提供商处获得许可的受著作权保护的软件（“第三方软件”）。所有第三方许可商和提供商均保留该等第三方软件的一切权利、所有权和利益以及该等第三方软件的全部副本，包括所有著作权和其他知识产权。您使用任何第三方软件均应当受本协议的条款和条件、任何第三方软件文档或者书面材料中规定的适用的限制和其他条款和条件（包括但不限于最终用户许可协议）的约束，并且您应当遵守该等条款和条件。
+                        </p>
+                        <p>
+                            您承认并接受，优必选提供的SDK的形式和性质可能会发生变化而不事先向您发出通知，并且后来的SDK版本可能与根据之前的SDK开发的应用和其它应用不兼容。您确认并同意，优必选可能会根据自己的独立判断，永久性或者暂时地停止向您或者一般用户提供SDK，而不用提前向您发出通知。您认可并且同意，SDK“测试”版（beta版）仅为评估目的发行，其中可能含有缺陷、瑕疵和错误，并且SDK可能失灵、返回不准确的结果以及/或者存在其他故障。
+                        </p>
+                    </p>
+                </p>
+
+                <p>
+                    <h4>
+                        知识产权
+                    </h4>
+                    <p>
+                        您确认并同意SDK所有权属于优必选。您同意，您既不会拥有也不会因此获得SDK和文档的任何所有权或者任何有关的专利权、著作权、商标权或者其他知识产权。优必选保留对文档的所有副本和SDK的一切权利、所有权和利益，无论其原件或者其他副本今后以何种形式或者载体存在。本许可不构成出售原件或者今后的任何副本。SDK和文档将受到著作权和其他知识产权法律以及国际公约的保护。除供您个人使用外，您不得制作任何SDK副本。您制作任何SDK或者文档的副本均会违反本许可。通过SDK访问的所有内容均为有关的内容所有者的财产，并且受适用的著作权法的保护。与SDK和文档有关的所有商标均由优必选公司拥有，并且本协议不提供使用任何该等商标的许可。您向优必选提供的与SDK有关的所有建议和反馈均属于优必选的财产，并且视为优必选的机密信息。
+                    </p>
+                </p>
+
+                <p>
+                    <h4>
+                        协议终止
+                    </h4>
+                    <p>
+                        您或者优必选均可以随时在发出书面通知后终止本协议以及您使用SDK和文档的权利。如果您未能遵守本协议的条款，本协议将自动终止。在终止后，您应当立即返还或者销毁您占有、保管或者控制的所有SDK和文档的副本。
+                    </p>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+$(function() {
+    $('input').blur(function() {
+        // 验证用户名
+        if ($(this).is('#userEmail')) {
+            if(this.value != ""){
+                $(this).removeClass('error');
+                if(!/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value)){//邮箱格式错误
+                    $(".email-error").removeClass('hide');
+                    $(this).addClass('error');
+                    closeSubmit();
+                }else{
+                    $(".email-error").addClass('hide');
+                    $(this).removeClass('error');
+                    openSubmit();
+                }
+            }
+        }
+        // 验证密码
+        if ($(this).is('#userPassword')) {
+            if(this.value != ""){
+                if(this.value.length < 6 || this.value.length > 24){//密码错误
+                    $(".password-error").removeClass('hide');
+                    $(this).addClass('error');
+                    closeSubmit();
+                }else{
+                    $(".password-error").addClass('hide');
+                    $(this).removeClass('error');
+                    openSubmit();
+                }
+            }
+        }
+        // 验证确认密码
+        if ($(this).is('#confirmpassword')) {
+            if(this.value != ""){
+                if(this.value != $("#userPassword").val()){//确认密码错误
+                    $(".confirmpassword-error").removeClass('hide');
+                    $(this).addClass('error');
+                    closeSubmit();
+                }else{
+                    $(".confirmpassword-error").addClass('hide');
+                    $(this).removeClass('error');
+                    openSubmit();
+                }
+            }
+        }
+    });
+    // $('input').blur(function() {
+    //     var $parent = $(this).parent();
+    //     $parent.find(".formtips").remove();
+    //     $(".code-error").addClass('hide');
+    //     //验证邮件
+    //     if ($(this).is('#userEmail')) {
+    //         if (this.value == "" || (this.value != "" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value))) {
+    //             var errorMsg = '请输入正确的E-Mail地址.';
+    //             $parent.append('<span class="formtips onError">' + errorMsg + '</span>');
+    //         }
+    //     }
+    //     if ($(this).is('#userPassword')) {
+    //         if (this.value == "" || this.value.length < 6 || this.value.length > 24) {
+    //             var errorMsg = '请输入6~24位密码';
+    //             $parent.append('<span class="formtips onError">' + errorMsg + '</span>');
+    //         }
+    //     }
+    //     if ($(this).is('#confirmpassword')) {
+    //         if (this.value != $("#userPassword").val()) {
+    //             var errorMsg = '2次输入的密码不一致';
+    //             $parent.append('<span class="formtips onError">' + errorMsg + '</span>');
+    //         }
+    //     }
+    // });
+    // .keyup(function() {
+    //     $(this).triggerHandler("blur");
+    // }).focus(function() {
+    //     $(this).triggerHandler("blur");
+    // }); //end blur
+
+    //提交，最终验证。
+    $('#submit').click(function() {
+        $(".er1001, .er1003").addClass('hide');
+        if(checkValue()){
+            register("1");
+        }else{
+            return;
+        }
+    });
+
+    //enter 提交
+    $('#confirmpassword, #userPassword, #userEmail').bind('keypress',function(event){
+        if(event.keyCode == "13"){
+            $(".er1001, .er1003").addClass('hide');
+            if(checkValue()){
+                register("1");
+            }else{
+                return;
+            }
+        }
+    });
+    $("input").on('input',function(e){
+        openSubmit();
+    });
+
+});
+
+
+// 注册代码
+function register(type) {
+    $("input.required").trigger('blur');
+    var params = {};
+    params.userEmail = $("input[name='userEmail']").val();
+    params.userPassword = $("input[name='userPassword']").val();
+    params.registerType = type;
+    $.ajax({
+        type: "post",
+        url: "/developer/user/register",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(params),
+        success: function(data) {
+            console.log(data);
+            if (data.status == true) {
+                sessionStorage.setItem("loginName",data.models.userEmail);
+                sessionStorage.setItem("userId",data.models.userId);
+                sessionStorage.setItem("userStatus",data.models.userStatus);
+                if(data.models.userStatus == "B02"){//未激活
+                    window.location.href = "active_mailbox.html";
+                }else {//已经激活
+                    if(data.models.is_developer){//是开发者
+                        window.location.href = "personal_center.html";
+                    }else{//不是开发者
+                        window.location.href = "apply_developer.html";
+                    }
+                }
+            } else {
+                if (data.info == "1001") {
+                    $(".er1001").removeClass('hide');
+                }
+            }
+        },
+        error: function() {
+            alert('注册失败，请重试');
+        }
+    });
+}
+</script>
+</html>

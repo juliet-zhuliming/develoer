@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UBT Developer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index1.css">
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ajaxFileUpload.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+</head>
+<body>
+<!-- sdk 菜单 -->
+    <div class="container">
+        <div class="sdk-menu" id="sdksub" style="display: none;">
+            <iframe src="sdk_meun.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%"  scrolling=no  height=120 
+                align="center" style="min-width: 1200px;">
+            </iframe>
+        </div>
+    </div>
+    <iframe src="header.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no 
+    height=80 align="center" style="min-width: 1230px;">
+    </iframe>
+    <div class="container personal-center">
+        <div class="tab">        
+            <ul id="tab" class="tab_navs">            
+                <li><span lang>user center</span> >> <span lang>case management</span></li>
+            </ul>    
+        </div>
+        <div class="header" style="text-align: center;">
+            <ul id="progressbar">
+                <li class="active"lang>Improve Case information</li>
+                <li lang>The Application is submitted for audit</li>
+                <li lang>Audit result</li>
+            </ul>
+        </div>
+        
+        <div class="casesubmit-page content " style="display: none;">
+            <form class="form-horizontal">
+                <!-- app 信息 -->
+                <div class="app-infobox">
+                    <div class="form-group">
+                        <h2 lang>APP information</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"><small>*</small> <span lang>choose an app</span></label>
+                        <div class="col-xs-9">
+                           <select class="form-control" name="pass-app" id="pass-app">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"><small>*</small> 
+                            <span lang>app name</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <input class="form-control required" type="text" name="app-name" id="app-name">
+                        </div>
+                    </div>
+                    <div class="form-group sdk">
+                        <label class="col-xs-2 control-label"><small>*</small>
+                            <span lang>app icon</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg" id="appIconPre">
+                                <input type="file" name="appIcon" id="appIcon" title=" "  />
+                            </div>
+                            <span class="code-error" style="display: none" lang>Please upload an APP icon</span>
+                        </div>
+                    </div>
+                    <div class="form-group sdk">
+                        <label class="col-xs-2 control-label"><small>*</small><span lang>Image</span></label>
+                        <div class="col-xs-9">
+                            <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg" id="img_appScan1" >
+                                <input type="file" name="appScan1" id="appScan1" title=" " index="0"/>
+                            </div>
+                            <span class="code-error" style="display: none" lang>Please upload an image</span>
+                        </div>
+                    </div>
+                    <div class="form-group sdk">
+                        <label class="col-xs-2 control-label"><small>*</small><span lang>Introduction video</span></label>
+                        <div class="col-xs-9">
+                            <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg">
+                                <input type="file" name="appScan" id="appScan"  />
+                            </div>
+                            <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg">
+                                <input type="file" name="appScan" id="appScan2"  />
+                            </div>
+                            <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg">
+                                <input type="file" name="appScan" id="appScan3"  />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label class="col-xs-2 control-label">简短介绍:</label>
+                        <div class="col-xs-9">
+                            <input class="form-control" type="text" name="app-name" id="app-name">
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"><small>*</small>
+                            <span lang>APP introduction</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <textarea class="form-control required"  rows="4" name="appResume" id="appResume" maxlength="160"></textarea>
+                            <small lang>Input 160 characters at most</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- 开发者信息 -->
+                <div class="develoer-infobox">
+                    <div class="form-group">
+                        <h2 lang>Developer information</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"><small>*</small>
+                            <span lang>Developer name/Company name</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <input class="form-control required" type="text" name="appAuthor" id="appAuthor">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label" lang>Developer/Company web link</label>
+                        <div class="col-xs-9">
+                            <input class="form-control" type="text" name="appAuthorLink" id="appAuthorLink">
+                        </div>
+                    </div>
+                </div>
+                <!-- 功能信息 -->
+                <div class="develoer-infobox">
+                    <div class="form-group">
+                        <h2 lang>Function information</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"><small>*</small><span lang>Function highlights</span></label>
+                        <div class="col-xs-9">
+                            <textarea class="form-control required"  rows="4" name="appShow" id="appShow" maxlength="100"></textarea>
+                            <small lang>you may enter no more than 100 words at most</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label" lang>Download link of APP Store</label>
+                        <div class="col-xs-9">
+                            <input class="form-control" type="text" name="appDownloadUr" id="appDownloadUr">
+                        </div>
+                    </div>
+                   <!--  <div class="form-group">
+                        <label class="col-xs-2 control-label">google Play 下载链接:</label>
+                        <div class="col-xs-9">
+                            <input class="form-control" type="text" name="app-name" id="app-name">
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label" lang>Download guide</label>
+                        <div class="col-xs-9">
+                            <textarea class="form-control"  rows="4" name="appDownloadGuide" id="appDownloadGuide" maxlength="100"></textarea>
+                            <small lang>you may enter no more than 100 words at most</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-xs-12 submit-agrree" >
+                        <input type="checkbox" id="termsCondition" /> &nbsp;<span lang>I have read and agree to</span>
+                        <a href="#" data-toggle="modal" data-target="#dec_detail" style="color:#44a8f2;text-decoration:none;" lang>
+                        《Terms and Conditions for alpha2 showcase Application》
+                        </a>
+                    </label>
+                </div>
+                <div class="form-group" style="text-align: center;">
+                    <div class="col-xs-6">
+                        <button class="btn-main disabled" type="button" id="submitapp-btn"  disabled="true" lang>submit</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <button class="btn-cancel " type="button" data-dismiss="modal" lang>cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- success page -->
+        <div class="success-page" style="display: none;">
+            <h2 class="success-title" lang>Your Application is successfully submitted for audit!</h2>
+            <p class="success-desc" lang>We will finish the audit within 24 hours and inform you  by e-mails or messages from the website, please note to check.</p>
+            <button class="btn btn-main btn-detail" lang>View case details</button>
+        </div>
+        <!-- 审核通过页面 -->
+        <div class="success-result" style="display: none;">
+            <h2 class="success-title" lang>Congratulations! Your Case has passed the audit.</h2>
+            <button class="btn btn-main btn-detail" lang>View case details</button>
+        </div>
+        <!-- 审核不通过 -->
+        <div class="fail-result" style="display: none;">
+            <h2 class="success-title" lang>Sorry to inform you that your Case failed to pass the audit.</h2>
+            <button class="btn btn-main btn-detail" lang>View case details</button>
+        </div>
+    </div>
+
+<!-- footer -->
+    <iframe src="footer.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no height=380 
+        style="min-width: 1230px;">
+    </iframe>
+
+<!-- 提交确认 -->
+<div class="modal" id="example">
+    <div class="modal-dialog" style="margin-top: 10%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+                <h4 class="modal-title" lang>Tips</h4>
+            </div>
+            <div class="modal-body">
+                <p lang>You can not modify the information after submitting it for audit, are you sure to submit?</p>
+                <input type="hidden" id="dele_appid"></input>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" lang>cancel</button>
+                <button type="button" class="btn btn-primary" id="sure-submit" lang>sure</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 条款与条件 -->
+<div class="modal fade in" id="dec_detail" style="display: none;">
+    <div class="modal-dialog" style="width:800px;margin-top: 200px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button" style="font-size: 34px;outline: none;">
+                    ×
+                </button>
+                <h3 class="modal-title">
+                    &nbsp;
+                </h3>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 案例详情 -->
+<div class="modal bs-example-modal-lg in" id="caseDetail_modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only" lang>Close</span>
+                </button>
+                <h4 class="modal-title" id="myLargeModalLabel" lang>Case details</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal form-detail" >
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>choose an app</label>
+                        <div class="col-xs-9">
+                           <span id="select_app"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>app name</label>
+                        <div class="col-xs-9">
+                           <span id="s_appname"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>app icon</label>
+                        <div class="col-xs-9">
+                            <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg" id="s_appIconPre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Image</label>
+                        <div class="col-xs-9">
+                           <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg" id="s_appImg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Introduction video</label>
+                        <div class="col-xs-9">
+                           <span id="s_video"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>APP introduction</label>
+                        <div class="col-xs-9">
+                           <span id="s_appintro"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Developer name/Company name</label>
+                        <div class="col-xs-9">
+                           <span id="s_company"></span>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Developer/Company web link</label>
+                        <div class="col-xs-9">
+                           <span id="s_companyLink"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Function highlights</label>
+                        <div class="col-xs-9">
+                           <span id="s_function"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Download link of APP Store</label>
+                        <div class="col-xs-9">
+                           <span id="storeLink"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Download guide</label>
+                        <div class="col-xs-9">
+                           <span id="storeGuide"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="text-align: center;" >
+                <button type="button" class="btn btn-main" data-dismiss="modal">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+var params = {};
+$(function(){
+    params.appIcon = "";
+    params.appImage = "";
+    loadApp();
+    caseId = GetQueryString("caseId");
+    if(caseId!=null){
+        loadCaseDetail(caseId);
+    }else{
+        $(".casesubmit-page").show();
+    }
+    // 上传应用图标
+    $('#appIcon').change(function(){
+        uploadAppIcon();
+    });
+
+    // 上传图片
+    $('#appScan1 , #appScan2 , #appScan3 ').change(function(){
+        var index = $(this).attr('index')
+        uploadAppScan($(this).attr('id'),index);
+    });
+
+    // 提交校验
+    $('input.required, textarea.required').blur(function() {
+        if ($(this).val() == "") {
+           $(this).addClass('error');
+        }else {
+           $(this).removeClass('error'); 
+        }
+    }).keyup(function() {
+        $(this).triggerHandler("blur");
+    }).focus(function() {
+        $(this).triggerHandler("blur");
+    }); //end blur
+
+    // 提交按钮
+    $("#submitapp-btn").click(function(){
+        $('input.required, textarea.required').each(function(index, el) {
+            if($(this).val() == ""){
+                $(this).addClass("error");
+            }else{
+                $(this).removeClass("error");
+            }
+        });
+        if(params.appIcon == "") {
+            $("#appIcon").parent().next("span.code-error").show();
+        }
+        if(params.appImage == "") {
+            $("#appScan1").parent().next("span.code-error").show();
+        }
+        var inputs = $("input.error, textarea.error");
+        if(inputs.length > 0 ||params.appImage == "" ||params.appIcon == "" ){
+            return ;
+        }else {
+            $("#example").modal('show');
+        }
+    });
+
+    // 确认提交
+    $('#sure-submit').click(function(){
+        submitApplyCase();
+    });
+
+    // 条款与条件
+    $("#termsCondition").click(function(){
+        var checkboxs = $("#termsCondition");
+        var e1=checkboxs[0].checked;
+        if (e1) {
+            $("#submitapp-btn").attr("disabled",false);
+            $("#submitapp-btn").removeClass('disabled');
+        }else{
+            $("#submitapp-btn").attr("disabled",true);
+            $("#submitapp-btn").addClass('disabled');
+        }
+    });
+    // 查看案例详情
+    $('.btn-detail').click(function(){
+        loadCaseDetail(caseId);
+        $('#caseDetail_modal').modal('show');
+    });
+
+});
+
+// 提交案例申请
+function submitApplyCase(){
+    params.appId = $("#pass-app").val();
+    params.appUserId = sessionStorage.getItem("userId");
+    params.appName = $("#app-name").val();
+    params.appAuthor = $("#appAuthor").val();
+    params.appAuthorLink = $("#appAuthorLink").val();
+    params.appVideo = "3551";
+    params.appResume = $("#appResume").val();
+    params.appShow = $("#appShow").val();
+    params.appDownloadUrl = $("#appDownloadUrl").val();
+    params.appDownloadGuide = $("#appDownloadGuide").val();
+    params.caseStatus = "2";
+    $.ajax({
+        url: "/developer/app/applyCase",
+        type: "post",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(params),
+        success: function(data) {
+            if (data.status == true) {
+                $("#example").modal('hide');
+                $(".casesubmit-page").hide();
+                $(".success-page").show();
+                $("#progressbar li:nth-child(2)").addClass('active');
+            }else{
+                alert(data);
+            }
+        },
+        error: function(data, status, e)  {
+            alert('提交失败，请重试');
+        }
+    });  
+}
+
+// 加载案例详情
+function loadCaseDetail(id){
+    var params = {};
+    params.caseId = id;
+    $.ajax({
+        type: "post",
+        url: "/developer/app/caseDetail",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(params),
+        success: function(data) {
+            if (data.status == true) {
+                var obj= data.models[0];
+                if(obj.caseStatus == "2"){//审核中
+                    $("#progressbar li:nth-child(2)").addClass('active');
+                    $(".casesubmit-page").hide();
+                    $(".success-page").show();
+                }else if (obj.caseStatus == "3"){//审核通过
+                    $("#progressbar li").addClass('active');
+                    $(".casesubmit-page, .success-page").hide();
+                    $(".success-result").show();
+                }else if (obj.caseStatus == "4"){//审核不通过
+                    $("#progressbar li").addClass('active');
+                    $(".casesubmit-page, .success-page").hide();
+                    $(".fail-result").show();
+                }else{
+                    $(".casesubmit-page").show();
+                }
+                setCaseDetail(obj);
+            }else{
+                if(data.info == "-1"){
+                    relogin();
+                }
+            }
+        },
+        error: function() {
+            alert('加载失败，请重试');
+        }
+    });
+}
+// 加载通过测试的app
+function loadApp(){
+    $("#table-appcontent").html("");
+    var params = {};
+    params.appUserId = sessionStorage.getItem("userId");
+    $.ajax({
+        type: "post",
+        url: "/developer/app/findMyApp",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(params),
+        success: function(data) {
+            if (data.status == true) {
+                var datatlist = data.models;
+                if(datatlist.length > 0){
+                    for (var i = 0; i < datatlist.length; i++) {
+                        // if(datatlist[i].appStatus == "3"){
+                            $("#pass-app").append('<option value="'+datatlist[i].appId+'">'+datatlist[i].appName+'</option>')
+                        // }
+                    }
+                }
+               
+            }else{
+                if(data.info == "-1"){
+                    relogin();
+                }
+            }
+        },
+        error: function() {
+            alert('加载失败，请重试');
+        }
+    });
+}
+
+// 上传应用图标
+function uploadAppIcon(){
+    $.ajaxFileUpload({
+        url: "/developer/app/uploadAppIcon",
+        type: "post",
+        dataType: "json",
+        data: "",
+        fileElementId:['appIcon'], 
+        success:function(data,status){
+            if (data.status == true) {
+                $("#appIcon").parent().next("span.code-error").hide();
+                params.appIcon = data.models;
+                $("#appIconPre").attr("src",data.models);
+                $("#appIcon").replaceWith('<input type="file" class="logoupfile" name="appIcon" id="appIcon"  />');
+                $('#appIcon').change(function(){
+                    uploadAppIcon();
+                });
+            }else{
+                alert(data);
+            }
+        },
+        error: function(data, status, e)  {
+            alert('上传失败，请重试');
+        }
+    }); 
+}
+
+// 上传应用截图
+function uploadAppScan(id,i){
+    $.ajaxFileUpload({
+        url: "/developer/app/uploadAppScan",
+        type: "post",
+        dataType: "json",
+        data: "",
+        fileElementId:[id], 
+        success:function(data,status){
+            if (data.status == true) {
+                $("#appScan1").parent().next("span.code-error").hide();
+                $("#img_"+id).attr("src",data.models);
+                params.appImage = data.models;
+                $("#"+id).replaceWith('<input type="file" class="logoupfile" name="'+id+'" id="'+id+'" index="'+i+'" />');
+                $("#"+id).change(function(){
+                    var i = $(this).attr('index')
+                    uploadAppScan(id,i);
+                });
+            }else{
+                alert(data);
+            }
+        },
+        error: function(data, status, e)  {
+            alert('上传失败，请重试');
+        }
+    }); 
+}
+
+
+// 设置详情信息
+function setCaseDetail(data){
+    $("#select_app").html(data.appId);
+    $("#s_appname").html(data.appName);
+    $("#s_appIconPre").html(data.appIcon);
+    $("#s_appImg").attr("src",data.appImage);
+    $("#s_appintro").html(data.appResume);
+    $("#s_company").html(data.appAuthor);
+    $("#s_companyLink").html(data.appAuthorLink);
+    $("#s_function").html(data.appShow);
+    $("#storeLink").html(data.appDownloadUrl);
+    $("#storeGuide").html(data.appDownloadGuide);
+
+    $("#appIconPre").attr("src",data.appIcon);
+    params.appIcon = data.appIcon;
+    $("#img_appScan1").attr("src",data.appImage);
+    params.appImage = data.appImage;
+    $("#pass-app").val(data.appId);
+    $("#app-name").val(data.appName);
+    $("#appAuthor").val(data.appAuthor);
+    $("#appAuthorLink").val(data.appAuthorLink);
+    $("#appResume").val(data.appResume);
+    $("#appShow").val(data.appShow);
+    $("#appDownloadUrl").val(data.appDownloadUrl);
+    $("#appDownloadGuide").val(data.appDownloadGuide);
+}
+
+</script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UBT Developer</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" ></meta>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body style="background: #f3f3f3;color: white;">
+<!-- footer 导航底部 -->
+<footer id="site-footer" class="site-footer">
+    <div class="container" style="height: 302px;">
+        <div class="foot-nav row">
+            <nav class="link-list col-xs-2">
+                <span class="title" lang>SDK</span>
+                <a href="/mobile-sdk" lang>Mobile SDK</a>
+                <a href="/onboard-sdk" lang>action kit</a>
+                <a href="/guidance-sdk" lang>alpha 2 service</a>
+                <a href="/guidance-sdk" lang>vpp</a>
+            </nav>
+            <nav class="link-list col-xs-2">
+                <span class="title" lang>Information</span>
+                <a href="/showcase" lang>Showcase</a>
+                <a href="/products" lang>Latest Events</a>
+            </nav>
+            <nav class="link-list col-xs-2">
+                <span class="title" lang>Help&Documents</span>
+                <a target="_blank" href="" lang>Resource Center</a>
+                <a target="_blank" href="" lang>become a developer</a>
+            </nav>
+            <nav class="link-list col-xs-3">
+                <span class="title" lang>Technical Support</span>
+                <a href="mailto:mk015@ubtrobot.com" lang>mail:mk015@ubtrobot.com</a>
+                <a href="mailto:497284524@qq.com" lang>QQ Group:497284524</a>
+                <a href="mailto:365014561@qq.com" lang>Support:365014561</a>
+            </nav>
+            <nav class="link-list col-xs-3 pull-right" style="text-align: center;">
+               <img src="images/er.jpg">
+               <p style="margin-top: 26px;">
+                   <span lang>Scan QR code,follow our Wechat Official Account</span>
+               </p>
+            </nav>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="container" style="height: 82px;">
+        <div class="foot-copyright row">
+            
+            <div class="copyright col-xs-9">
+                <p style="margin-top: 20px;font-size: 14px;color: #9a9a9a;">
+                    <span lang>Copyright © 2016 UBTECH All rights reserved 粤ICP备13036544号</span><br>
+                    <span lang>More Information please access <a href="" style="color: white;text-decoration: underline;" lang>ubtrobot.com</a></span>
+                </p>
+            </div>
+            <div class="col-xs-3" style="text-align: center;">
+                <div class="lang-selector" style="margin-top: 34px;">
+                    <select dir="rtl" style="height: 25px;background: #9a9a9a;width: 60px" id="languageSelect">
+                        <option value="en" id="enBtn">EN</option>
+                        <option value="cn" id="cnBtn">中文</option></select>
+                    <i class="fa fa-globe"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<script type="text/javascript">
+var dict = {}; 
+$(function(){
+    registerWords();
+    var lang = (navigator.language || navigator.browserLanguage).toLowerCase();
+    if(lang.indexOf("zh") > -1){
+        lang = "cn";
+    }else if(lang.indexOf("en") > -1){
+        lang ="en";
+    }
+    var current = sessionStorage.getItem("lang")|| lang;
+    setLanguage(current);
+    $("#languageSelect").val(current);
+    $("#languageSelect").change(function(event) {
+        sessionStorage.setItem("lang",$(this).val());
+        console.log($(this).val());
+        window.parent.location.reload();
+    });
+});  
+</script>
+</html>

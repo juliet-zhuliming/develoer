@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UBT Developer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <style type="text/css">
+    small{
+        color: #e08383;
+    }
+    input.error,select.error {
+        border-color: #eca5a5;
+    }
+    </style>
+</head>
+<body>
+    <!-- sdk 菜单 -->
+    <div class="container">
+        <div class="sdk-menu" id="sdksub" style="display: none;">
+            <iframe src="sdk_meun.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%"  scrolling=no  height=120 
+                align="center" style="min-width: 1200px;">
+            </iframe>
+        </div>
+    </div>
+    <iframe src="header.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no 
+    height=80 align="center" style="min-width: 1230px;">
+    </iframe>
+    <div class="login-page" id="login-page">
+        <div class="container title_bg">
+            <img src="images/title_bg.png">
+            <div class="login-title">
+                <h1 lang>Login the Developers' Platform</h1>
+            </div>
+        </div>
+        <div class="account-box">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Please enter your email address" type="text" name="loginName" id="loginName" lang/>
+                        <small class="error hide email-error " lang>Input a correct e-mail address</small>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Please enter your password(6-24 characters)" type="password" name="userPassword" id="userPassword" lang/>
+                        <small class="error hide password-error" lang>Input password with 6 to 24 characters in length</small>
+                    </div>
+                    <div class="form-group valid">
+                        <input class="form-control" placeholder="Please enter the verification code" type="text" name="verifyCode" id="verifyCode" lang/>
+                        <input class="valid-number" name="check-number"  readonly="true" />
+                    </div>
+                    <div class="form-group error-tips">
+                        <small class="error hide er1002" lang>Incorrect User name or password</small>
+                        <small class="error hide er1004" lang>Verification Code Error</small>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn-main full-width" type="button" name="submit" id="submit" lang>Login Right Now</button>
+                    </div>
+                    <div class="form-group">
+                        <a class="pull-right forget-password" href="forgot_password.html" lang>Forget Password?</a>
+                        <a href="register.html" target="_self" lang>Create UBT Account</a>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+<!-- footer -->
+    <iframe src="footer.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no height=380 
+        style="min-width: 1230px;">
+    </iframe>
+</body>
+
+<script type="text/javascript">
+$(function() {
+    getCheckcode();
+    $('input').blur(function() {
+        // 验证用户名
+        if ($(this).is('#loginName')) {
+            if(this.value != ""){
+                $(this).removeClass('error');
+                if(!/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value)){//邮箱格式错误
+                    $(".email-error").removeClass('hide');
+                    $(this).addClass('error');
+                    closeSubmit();
+                }else{
+                    $(".email-error").addClass('hide');
+                    $(this).removeClass('error');
+                    openSubmit();
+                }
+            }
+        }
+        // 验证密码
+        if ($(this).is('#userPassword')) {
+            if(this.value != ""){
+                if(this.value.length < 6 || this.value.length > 24){//密码错误
+                    $(".password-error").removeClass('hide');
+                    $(this).addClass('error');
+                    closeSubmit();
+                }else{
+                    $(".password-error").addClass('hide');
+                    $(this).removeClass('error');
+                    openSubmit();
+                }
+            }
+        }
+    });
+    // 验证码变化
+    $("#verifyCode").on('input',function(e){
+        $(".er1004").addClass('hide');
+        $(this).removeClass('error');
+    });
+
+    //提交，最终验证。
+    $('#submit').click(function() {
+        $(".er1002, .er1004").addClass('hide');
+        if(checkValue()){
+            login();
+        }else{
+            return;
+        }
+    });
+
+    // enter 提交
+    $('#verifyCode, #userPassword, #loginName').bind('keypress',function(event){
+        if(event.keyCode == "13"){
+            $(".er1002, .er1004").addClass('hide');
+            if(checkValue()){
+                login();
+           }else{
+                return;
+           }
+        }
+    });
+
+});
+
+// login 登录处理 
+function login() {
+    $("input").trigger('blur');
+    var params = {};
+    params.loginName = $("input[name='loginName']").val();
+    params.userPassword = $("input[name='userPassword']").val();
+    params.verifyCode = $("input[name='verifyCode']").val();
+    $.ajax({
+        type: "post",
+        url: "/developer/user/login",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(params),
+        success: function(data) {
+            if (data.status == true) {
+                login_data = data.models;
+                sessionStorage.setItem("loginName",data.models.userEmail);
+                sessionStorage.setItem("userId",data.models.userId);
+                sessionStorage.setItem("userStatus",data.models.userStatus);
+                sessionStorage.setItem("isDev",data.models.isDev);
+                if(data.models.userStatus == "B02"){//未激活
+                    window.location.href = "active_mailbox.html";
+                }else {
+                    if(data.models.isDev=="1"){//是开发者
+                        window.location.href = "personal_center.html";
+                    }else{//不是开发者
+                        window.location.href = "apply_developer.html";
+                    }
+                }
+                
+            } else {
+                getCheckcode();
+                $("input[name='verifyCode']").val("");
+                if (data.info == "1002") {
+                    $(".er1002").removeClass('hide');
+                } else if (data.info == "1004") {
+                    $(".er1004").removeClass('hide');
+                }
+            }
+        },
+        error: function() {
+            alert('登录失败，请重试');
+        }
+    });
+}
+</script>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UBT Developer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index1.css">
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.lightSlider.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <style type="text/css">
+    .deve-name{
+
+    }
+    .use-sdk{
+
+    }
+    .main-title{
+
+    }
+    .main-desc{
+
+    }
+    .caseimg-section{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative
+    }
+
+    .caseimg-section img {
+        max-height: 500px;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        height: 500px;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-slide {
+        background-size: cover;
+        background-position: center;
+    }
+    .gallery-top {
+        height: 80%;
+        width: 100%;
+    }
+    .gallery-thumbs .swiper-slide-active {
+        opacity: 1;
+        border: 20px solid #ebebeb !important;
+    }
+
+    .gallery-thumbs .swiper-slide {
+        height: 180px;
+        border: 1px solid #e6e6e6;
+        cursor: pointer;
+    }
+    .casetitle{
+        margin-top: 45px;
+        color: #707473;
+        font-weight: 600;
+    }
+    .casedesc{
+        line-height: 2.0;
+    }
+    </style>
+</head>
+<body>
+    <!-- sdk 菜单 -->
+    <div class="container">
+        <div class="sdk-menu" id="sdksub" style="display: none;">
+            <iframe src="sdk_meun.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%"  scrolling=no  height=120 
+                align="center" style="min-width: 1200px;">
+            </iframe>
+        </div>
+    </div>
+    <iframe src="header.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no 
+    height=80 align="center" style="min-width: 1230px;">
+    </iframe>
+    <div class="container resource">
+        <div class="tab">        
+            <ul id="tab" class="tab_navs">            
+                <li lang>app name</li>
+            </ul>    
+        </div>
+        <div class="container content sdk-detail" style="padding: 0px;">
+            <div class="col-menu">
+                <img src="images/showcase/case1.png">
+                <h3 class="deve-name" lang>developer</h3>
+                <h4 lang>Developer name</h4>
+                <h3 class="use-sdk" lang>SDK used</h3>
+            </div>
+            <div class="col-main">
+                <h1 class="main-title" lang>English Education</h1>
+                <!-- 轮播区域 -->
+                <div class="caseimg-section">
+                <!-- Swiper -->
+                    <div class="swiper-container gallery-top">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="images/showcase/english0.jpg" /></div>
+                            <div class="swiper-slide"><img src="images/showcase/english1.jpg" /></div>
+                            <div class="swiper-slide"><img src="images/showcase/english2.jpg" /></div>
+                            <div class="swiper-slide"><img src="images/showcase/english3.jpg" /></div>
+                            <div class="swiper-slide"><img src="images/showcase/english4.jpg" /></div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <!-- <div class="swiper-pagination"></div> -->
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <!--  -->
+                    <div class="swiper-container gallery-thumbs">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="images/showcase/english0_1.jpg"></div>
+                            <div class="swiper-slide"><img src="images/showcase/english1_1.jpg"></div>
+                            <div class="swiper-slide"><img src="images/showcase/english2_1.jpg"></div>
+                            <div class="swiper-slide"><img src="images/showcase/english3_1.jpg"></div>
+                            <div class="swiper-slide"><img src="images/showcase/english4_1.jpg"></div>
+                        </div>
+                    </div>
+
+                    <!-- Swiper JS -->
+                    <script src="js/swiper.min.js"></script>
+
+                    <!-- Initialize Swiper -->
+                    <script>
+                    var galleryTop = new Swiper('.gallery-top', {
+                        nextButton: '.swiper-button-next',
+                        prevButton: '.swiper-button-prev',
+                        spaceBetween: 0,
+                        loop:true,
+                        loopedSlides: 5, //looped slides should be the same     
+                    });
+                    var galleryThumbs = new Swiper('.gallery-thumbs', {
+                        spaceBetween: 0,
+                        slidesPerView: 4,
+                        touchRatio: 0.2,
+                        loop:true,
+                        loopedSlides: 5, //looped slides should be the same
+                        slideToClickedSlide: true
+                    });
+                    galleryTop.params.control = galleryThumbs;
+                    galleryThumbs.params.control = galleryTop;
+                    
+                    </script>
+                </div>
+
+                <!-- 应用简介 -->
+                <div class="app-introduce">
+                    <h2 class="casetitle" lang>APP introduction</h2>
+                    <p class="casedesc" lang>English Education is a product for family English education,designed for Chinese children who are older than 6 years old. It turns Alpha 2 into your private English teacher. With specialists designing the course modules and combining them with the robot's human-like expression,the product deeply activates children's brains step by step according to the laws of language recognition thus making English-learning easier. It creates a pure English environment for children through the mechanism of emulational dialogue scene. With the function of oral pronunciation evaluation and learning outcome examination the product is dedicated to comprehensively enhancing children's English ability and thoroughly removing the problem of “Dumb English” for Chinese learners. It fully takes use of the AI recognition function, and intelligently selects teaching procedures and modules according to children's learning state and performance so as to increase their focus level and sense of fun.</p> 
+                </div>
+                <!-- 功能亮点 -->
+                <div class="app-func">
+                    <h2 class="casetitle" lang>Function highlights</h2>
+                    <p class="casedesc" lang>New style of voice interaction,systematical way of learning; Obvious learning outcome,out of perfectly-made plans; Accurate spoken-English evaluation, less pronunciation mistakes; Robot imitating real dialogues, children enjoying scenario-based study; Intelligently recognizing inattention,attracting attention by amusement</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <iframe src="footer.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no height=380 
+            style="min-width: 1230px;">
+    </iframe>
+</body>
+<script type="text/javascript">
+$(function(){
+    var caseList = [{
+                caseIcon : 'images/showcase/case1.png',
+                developer : '开发者名字',
+                sdk : '使用过的sdk',
+                caseName : '英语教育',
+                introduce : '《英语教育》作为家庭英语教育产品，针对6岁以上中国儿童设计，能够让alpha2机器人成为您家庭的英语教师，在家庭生活中营造纯正的英语语言环境，让孩子在与机器人自然语音交互中提升英语听说水平。专家精心定制课程模块，与机器人拟人化的表现形式完美结合，按照儿童大脑的语言认知规律，循序渐进、由浅入深地激活孩子大脑语言中枢，让英语学习变得轻松自然。拟真场景模拟对话机制，为孩子营造纯正的英文语境，发音评测功能，检验口语学习成果，从听到说全面提升儿童英语水平，彻底改变中国式哑巴英语学习的弊端。充分利用机器人智能领域识别功能，根据儿童的状态、表现，智能化选择教学流程和模块，提升孩子学习时的注意力和乐趣感.',
+                funcs : '全新语音交互方式，系统学习课程;制定计划，孩子学习成果一目了然;精准评测英语发音，纠正发音错误;机器人模拟真人对话，场景化学习;智能识别，心不在焉时“娱乐”召回',
+                thumbsImgs : ["english0_1.jpg","english1_1.jpg","english2_1.jpg","english3_1.jpg","english4_1.jpg"],
+                topImgs : ["english0.jpg","english1.jpg","english2.jpg","english3.jpg","english4.jpg"]
+            },{
+                caseIcon : 'images/showcase/talk.png',
+                developer : '开发者名字',
+                sdk : '使用过的sdk',
+                caseName : '闲聊',
+                introduce : '闲聊是一款与机器人语音聊天的软件，开启后，用户就可以自由自在的和机器人聊天了。用户可以让机器人唱歌、跳舞、说笑话、讲故事，还可以让机器人背诗、算术、回答百科问题等。机器人还会根据用户的问题作出机智的应答，幽默诙谐，让人忍俊不禁。',
+                funcs : '幽默风趣的对答，别具个性的调侃；海量的故事、笑话、音乐，包罗万有；百科、天气、算术、诗词，五花八门，涉猎广泛。'
+            },{
+                caseIcon : 'images/showcase/photo.png',
+                developer : '开发者名字',
+                sdk : '使用过的sdk',
+                caseName : '乐拍',
+                introduce : '乐拍是一款让机器人为用户拍照的软件，用户可以使用该功能随心所欲的进行自拍和照片查看。该应用拥有自动人脸识别和检测功能，智能追踪家庭成员的一举一动，为用户保留完美的一瞬。自动对焦功能，通过智能化算法快速高效完成，让相片保持合理的构图。查看照片，筛选分享，让个人与世界共享精彩。',
+                funcs : '1、智能检测，人脸识别，记录家庭成员最欢乐时刻；自动对焦，动态捕捉，何时何地都能获得精美留影；照片上传，社区分享，向世界展示独一无二的风采。'
+            }];
+});
+</script>
+</html>

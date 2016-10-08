@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UBT Developer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index1.css">
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+<style type="text/css">
+.guide p{
+    margin: 40px auto;
+}
+</style>
+</head>
+<body>
+    <!-- sdk 菜单 -->
+    <div class="container">
+        <div class="sdk-menu" id="sdksub" style="display: none;">
+            <iframe src="sdk_meun.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%"  scrolling=no  height=120 
+                align="center" style="min-width: 1200px;">
+            </iframe>
+        </div>
+    </div>
+    <iframe src="header.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no 
+    height=80 align="center" style="min-width: 1230px;">
+    </iframe>
+    <div id="page-apply-developer" class="apply-page">
+        <div class="container title_bg">
+            <img src="images/title_bg.png">
+            <div class="login-title">
+                <h1 id="head-title" lang>Apply to be a developer</h1>
+            </div>
+        </div>
+        <div class="container">
+            <!-- 开发者协议 -->
+            <div class="agreement">
+                <div class="header">
+                    <h2 class="title" lang>Apply for developer agreement</h2>
+                </div>
+                <div class="content">
+                    <div class="article">
+                        <p>
+                            本协议是开发者与深圳市优必选科技有限公司（“优必选”）之间关于开发者提交的应用程序之间的法律协议，适用于使用优必选软件开发工具包SDK的所有应用程序。
+                        </p>
+                        <p>
+                            【定义】
+                            下列术语在本协议中的含义为：  
+                            <ul>
+                                <li>1.1开发者，指经申请并经过优必选公司同意，将其开发的各种应用接入基于优必选开放平台而向用户提供各种服务的个人、法人及其他组织。</li>
+                                <li>1.2应用，指由开发者开发的可向用户提供各种服务的应用程序。</li>
+                                <li>1.3优必选开放平台，指由优必选公司所拥有、控制、经营的开放平台。</li>
+                                <li>1.4 用户数据，指用户向优必选提交的或者因使用优必选提供服务而生成的数据。</li>
+                            </ul>
+                            【开发者的权利和义务】
+                            <ul>
+                                <li>
+                                    2.1开发者保证在优必选开放平台上发布的应用及在平台上实施的活动真实、合法、准确、安全；不存在任何欺诈成分，不侵犯任何组织或个人的合法权益。对开发者行为造成的任何法律责任，由开发者承担，若由此给优必选公司造成任何损失，开发者需赔偿。
+                                </li>
+                                <li>
+                                    2.2与优必选公司合作的开发者，受本协议及优必选开放平台规则、制度的约束。开发者必须合法使用优必选公司授予其应用的。。
+                                </li>
+                                <li>
+                                    2.3 开发者在其应用设计上应当重视用户体验，尊重用户知情权、选择权，应当坚持诚实信用原则，不误导、欺诈用户，尊重用户隐私，不制造垃圾信息。
+                                </li>
+                                <li>
+                                    2.4开发者的应用或服务需要收集用户数据的，必须事先获得用户同意，且仅应当收集为应用程序运行及功能实现母的而必要的用户数据。开发者应当告知用户相关数据收集的目的、范围及使用方式，以保障用户的知情权。
+                                </li>
+                                <li>
+                                    2.5 开发者应当仅获取为应用或服务运行及功能实现目的而必要的数据，开发者不得以任何方式将用户数据提供给第三人，开发者在特定应用或服务中收集到的用户数据仅可以在该特定应用或服务中使用，不得以任何方式将其使用在其他应用或服务中。
+                                </li>
+                                <li>
+                                    2.6 开发者不得在其应用内宣传与本应用无关的任何其他信息，包括但不限于广告、其他的应用信息等。
+                                </li>
+                                <li>
+                                    2.7 如开发者需使用优必选公司的知识产权，应得到书面许可，且不得以任何方式泄露给他人，亦不得用于本协议约定外的任何用途；未经书面许可，开发者不得使用优必选公司的任何商业标识，亦不得使用与上述标识近似的标识，以免造成用户混淆。
+                                </li>
+                                <li>
+                                    2.8 开发者保证其上传到优必选开放平台及提供给用户的服务，也不涉及任何反动、色情、迷信、赌博、诽谤他人等违反法律法规的信息；且不会侵犯任何人的合法权益，包括但不限于知识产权、名誉权、肖像权、商业秘密等。开发者因违反此条款所引起的纠纷、赔偿责任等一律由开发者自行承担，若由此给优必选公司造成损失的，开发者应当承担赔偿责任。
+                                </li>
+                                <li>
+                                    2.9 开发者拥有依照本协议合法使用优必选开放平台的权利；开发者不得向任何第三人赠与、出售、转让或转授权优必选公司的代码、开放工具等。
+                                </li>
+                                <li>
+                                    2.10 开发者负责其应用及服务的创作、开发、编辑、加工、修改、测试、运营及维护，并且自行承担相应成本。
+                                </li>
+                                <li>
+                                    2.11 开发者保证在授权程序和服务的运营过程中，由用户使用应用或服务产生的内容，包括但不限于留言、消息、评论、名称等，不违反授权区域法律、法规的规定，不涉及有损中华人民共和国国家安全和利益的信息，也不涉及任何反动、色情、迷信、赌博、诽谤他人、侵权等违法信息，若有上述情形出现，开发者会及时删除或其采取他合理措施。开发者违反本条款所引起的任何争议、处罚和其他法律责任等，由其自行承担责任，给优必选公司造成损失的，开发者应予以足额赔偿。
+                                </li> 
+                                <li>
+                                    2.12开发者应用在开放平台上运行期间，开发者需向用户提供与应用相关的客户服务并保证服务质量。客户服务形式包括但不限于通过明确且合理的方式告知用户客户服务渠道、提供即时通讯方式、电话等，且此客户服务的成本由开发者承担。若因客户服务侵害到他人权益并给他人造成损失的，则开发者应承担全部责任；如侵害到优必选公司权益并给优必选公司造成损失，则开发者应承担恢复声誉的责任，并赔偿由此给优必选公司造成的一切损失。
+                                </li> 
+                                <li>
+                                    2.13 开发者不应当以任何形式上传或使用存在侵权或违反法律法规规定的内容、应用、服务或程序。优必选公司有权基于自身判断将违背本协议约定、有侵权嫌疑的内容、应用、服务或程序做删除处理，开发者对上述处理方式有异议的，可以联系优必选公司并提供异议理由及相关证据。如果开发者多次上传侵权内容、应用、服务或 程序的，优必选公司有权单方面决定停止向该开发者提供服务，并删除其开发者帐户。 
+                                </li>
+                                <li>
+                                    2.14开发者保证，其应用不得直接或间接从事下列行为：
+                                    <ul>
+                                        <li>
+                                            （1）删除、隐匿、改变优必选开放平台显示或包含的任何专利、版权、商标或其他所有权益声明；
+                                        </li>
+                                        <li>
+                                            （2）过滤掉或不显示优必选公司输出的推广内容；
+                                        </li>
+                                        <li>
+                                            （3）以任何方式干扰或企图干扰优必选公司网站任何部分、任何功能的正常运行；
+                                        </li>
+                                        <li>
+                                            （4）包括但不限于在应用中使用与“优必选”“UBTECH”等优必选公司产品同名或任何变体、缩写、改写、增减文字或字母或错误拼写等的字眼；
+                                        </li>
+                                        <li>
+                                            （5）避开、尝试避开或声称能够避开任何内容保护机制或者优必选公司所提供的数据度量工具，并由此导致用户认为其直接与优必选开放平台相关产品进行交互；
+                                        </li>
+                                        <li>
+                                            （6）在未获得优必选公司书面许可的情况下，以任何方式公开使用其标志、URL地址或其他标识等；
+                                        </li>
+                                        <li>
+                                            （7）在未经过用户同意的情况下，向任何其他用户或第三人显示或以其他任何方式提供该用户的任何信息；
+                                        </li>
+                                        <li>
+                                            （8）请求、收集、索取或以其他方式获取用户帐号、密码或其他任何身份验证凭据；
+                                        </li>
+                                        <li>
+                                            （9）提供跟踪功能，包括但不限于识别其他用户在个人主页上的查看、点击等操作行为；
+                                        </li>
+                                        <li>
+                                            （10）自动将应用或服务窗口定向到其他网页；
+                                        </li>                             
+                                    </ul> 
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            【优必选的权利和义务】   
+                            <ul>
+                                <li>
+                                    3.1 优必选公司有权审查开发者是否具备合法的经营资格、业务资质和服务能力。
+                                </li>
+                                <li>
+                                    3.2 如开发者在应用开放过程中，经优必选公司书面许可后使用的知识产权，所涉及的知识产权仍归属于优必选公司。
+                                </li>
+                                <li>
+                                    3.3 开发者因违反相关法律法规而被取缔运营，或因违规操作被网络监管部门查封所引发的全部责任，由开发者独立承担。情节严重并给优必选公司带来不利影响的，开发者须赔偿其所有损失，并负责恢复声誉，此情形下优必选公司有权单方终止本协议。
+                                </li>
+                                <li>
+                                    3.4 优必选公司如发现开发者有违法行为，或其提供的应用中包含违法信息或可能侵犯他人合法权益的信息，无论是否已造成不良后果，优必选公司有权要求开发者立即停止违法行为或更换、修改违法内容，或单方面终止本协议，并且有权要求开发者赔偿由此给优必选造成的损失。
+                                </li>
+                                <li>
+                                    3.5 第三方书面向优必选公司告知开放平台上有违法或不当情形的，优必选公司有权以普通或非专业人员的知识水平标准对相关内容进行判别，如认为这些内容或行为具有不合理或违法的情形，优必选公司有权删除相关信息，暂停或终止对开发者提供服务。
+                                </li>
+                                <li>
+                                    3.6 开发者违反平台使用规则时，优必选公司有权依照公司认识判断决定并采取以下行动：限制应用或服务、下线应用或服务、封闭应用或服务、封闭开发者及其应用或服务接入优必选开放平台的接口，终止与开发者的服务协议关系，以及其他优必选公司认为恰当的处理方式。
+                                </li>
+                                <li>
+                                    3.7 优必选公司可通过网页公告、电子邮件、手机短信等方式向开发者发出通知，该类通知发送时即视为已送到开发者。
+                                </li>                           
+                            </ul> 
+                        </p>
+                    </div>
+                </div>
+                <div class="form-btns text-center">
+                    <button type="button" class="btn-main btn-next" id="agree-btn" lang>Agree</button>
+                </div>
+            </div>
+            <!-- 申请步骤 -->
+            <div class="apply-steps" style="display: none;">
+                <div class="header">
+                    <ul id="progressbar">
+                        <li class="active" lang>Fill the developer information</li>
+                        <li lang>Authentication</li>
+                        <li lang>Finish</li>
+                    </ul>
+                </div>
+                <section class="step-one">
+                        <div class="form-group row">
+                            <label class="input-name col-xs-3">
+                                <span lang>The type of developer</span>
+                                <small>
+                                    *
+                                </small>
+                            </label>
+                            <div class="col-xs-7">
+                                <select class="form-control country-select" name="developerType" id="developerType">
+                                    <option value="1" lang>Individual</option>
+                                    <option value="2" lang>Company</option>
+                                </select>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group row hide">
+                            <label class="col-xs-3 input-name">
+                                <span lang>Company name</span>
+                                <small>
+                                    *
+                                </small>
+                            </label>
+                            <div class="col-xs-7">
+                                <input type="text" name="companyName" id="companyName">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-3 input-name">
+                                <span lang>Last name</span>
+                                <small>
+                                    *
+                                </small>
+                            </label>
+                            <div class="col-xs-7">
+                                <input type="text" name="lastName" id="lastName">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-3 input-name">
+                                <span lang>First name</span>
+                                <small>
+                                    *
+                                </small>
+                            </label>
+                            <div class="col-xs-7">
+                                <input type="text" name="firstName" id="firstName">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-3 input-name">
+                                <span lang>Country or region</span>
+                                <small>
+                                    *
+                                </small>
+                            </label>
+                            <div class="col-xs-7">
+                                <select class="form-control country-select" name="country" id="country">
+                                    <option value='86'>中国 </option>
+                                    <option value='852'>中国香港特别行政区 </option>
+                                    <option value='376'>安道尔 </option>
+                                    <option value='971'>阿拉伯联合酋长国 </option>
+                                    <option value='93'>阿富汗 </option>
+                                    <option value='1'>安提瓜和巴布达 </option>
+                                    <option value='1'>安圭拉 </option>
+                                    <option value='355'>阿尔巴尼亚 </option>
+                                    <option value='374'>亚美尼亚 </option>
+                                    <option value='599'>荷属安的列斯群岛 </option>
+                                    <option value='244'>安哥拉 </option>
+                                    <option value='672'>南极洲 </option>
+                                    <option value='54'>阿根廷 </option>
+                                    <option value='1'>美属萨摩亚 </option>
+                                    <option value='43'>奥地利 </option>
+                                    <option value='61'>澳大利亚 </option>
+                                    <option value='297'>阿鲁巴 </option>
+                                    <option value='358'>奥兰群岛 </option>
+                                    <option value='994'>阿塞拜疆 </option>
+                                    <option value='387'>波斯尼亚和黑塞哥维那 </option>
+                                    <option value='1'>巴巴多斯 </option>
+                                    <option value='880'>孟加拉国 </option>
+                                    <option value='32'>比利时 </option>
+                                    <option value='226'>布基纳法索 </option>
+                                    <option value='359'>保加利亚 </option>
+                                    <option value='973'>巴林 </option>
+                                    <option value='257'>布隆迪 </option>
+                                    <option value='229'>贝宁 </option>
+                                    <option value='590'>圣巴泰勒米 </option>
+                                    <option value='1'>百慕大 </option>
+                                    <option value='673'>文莱 </option>
+                                    <option value='591'>玻利维亚 </option>
+                                    <option value='55'>巴西 </option>
+                                    <option value='1'>巴哈马 </option>
+                                    <option value='975'>不丹 </option>
+                                    <option value='226'>布维特岛 </option>
+                                    <option value='267'>博茨瓦纳 </option>
+                                    <option value='375'>白俄罗斯 </option>
+                                    <option value='501'>伯利兹 </option>
+                                    <option value='1'>加拿大 </option>
+                                    <option value='61'>科科斯群岛 </option>
+                                    <option value='243'>刚果（金） </option>
+                                    <option value='236'>中非共和国 </option>
+                                    <option value='242'>刚果（布） </option>
+                                    <option value='41'>瑞士 </option>
+                                    <option value='225'>象牙海岸 </option>
+                                    <option value='682'>库克群岛 </option>
+                                    <option value='56'>智利 </option>
+                                    <option value='237'>喀麦隆 </option>
+
+                                    <option value='57'>哥伦比亚 </option>
+                                    <option value='506'>哥斯达黎加 </option>
+                                    <option value='53'>古巴 </option>
+                                    <option value='238'>佛得角 </option>
+                                    <option value='61'>圣诞岛 </option>
+                                    <option value='357'>塞浦路斯 </option>
+                                    <option value='420'>捷克共和国 </option>
+                                    <option value='49'>德国 </option>
+                                    <option value='253'>吉布提 </option>
+                                    <option value='45'>丹麦 </option>
+                                    <option value='1'>多米尼加 </option>
+                                    <option value='1'>多米尼加共和国 </option>
+                                    <option value='213'>阿尔及利亚 </option>
+                                    <option value='593'>厄瓜多尔 </option>
+                                    <option value='372'>爱沙尼亚 </option>
+                                    <option value='20'>埃及 </option>
+                                    <option value='212'>西撒哈拉 </option>
+                                    <option value='291'>厄立特里亚 </option>
+                                    <option value='34'>西班牙 </option>
+                                    <option value='251'>埃塞俄比亚 </option>
+                                    <option value='358'>芬兰 </option>
+                                    <option value='679'>斐济 </option>
+                                    <option value='500'>福克兰群岛 </option>
+                                    <option value='691'>密克罗尼西亚联邦 </option>
+                                    <option value='298'>法罗群岛 </option>
+                                    <option value='33'>法国 </option>
+                                    <option value='241'>加蓬 </option>
+                                    <option value='44'>英国 </option>
+                                    <option value='1'>格林纳达 </option>
+                                    <option value='995'>格鲁吉亚 </option>
+                                    <option value='594'>法属圭亚那 </option>
+                                    <option value='44'>格恩西岛 </option>
+                                    <option value='233'>加纳 </option>
+                                    <option value='350'>直布罗陀 </option>
+                                    <option value='299'>格陵兰 </option>
+                                    <option value='220'>冈比亚 </option>
+                                    <option value='224'>几内亚 </option>
+                                    <option value='590'>瓜德罗普岛 </option>
+                                    <option value='240'>赤道几内亚 </option>
+                                    <option value='30'>希腊 </option>
+                                    <option value='500'>南乔治亚岛和南桑威齐群岛 </option>
+                                    <option value='502'>危地马拉 </option>
+                                    <option value='1'>关岛 </option>
+                                    <option value='245'>几内亚比绍 </option>
+                                    <option value='592'>圭亚那 </option>
+                                    
+                                    <option value='61'>赫德与麦克唐纳群岛 </option>
+                                    <option value='504'>洪都拉斯 </option>
+                                    <option value='385'>克罗地亚 </option>
+                                    <option value='509'>海地 </option>
+                                    <option value='36'>匈牙利 </option>
+                                    <option value='62'>印度尼西亚 </option>
+                                    <option value='353'>爱尔兰 </option>
+                                    <option value='972'>以色列 </option>
+                                    <option value='44'>曼岛 </option>
+                                    <option value='91'>印度 </option>
+                                    <option value='246'>英属印度洋领地 </option>
+                                    <option value='964'>伊拉克 </option>
+                                    <option value='98'>伊朗 </option>
+                                    <option value='354'>冰岛 </option>
+                                    <option value='39'>意大利 </option>
+                                    <option value='44'>泽西岛 </option>
+                                    <option value='1'>牙买加 </option>
+                                    <option value='962'>约旦 </option>
+                                    <option value='81'>日本 </option>
+                                    <option value='254'>肯尼亚 </option>
+                                    <option value='996'>吉尔吉斯斯坦 </option>
+                                    <option value='855'>柬埔寨 </option>
+                                    <option value='686'>基里巴斯 </option>
+                                    <option value='269'>科摩罗 </option>
+                                    <option value='1'>圣基茨和尼维斯 </option>
+                                    <option value='850'>朝鲜 </option>
+                                    <option value='82'>韩国 </option>
+                                    <option value='965'>科威特 </option>
+                                    <option value='1'>开曼群岛 </option>
+                                    <option value='7'>哈萨克斯坦 </option>
+                                    <option value='856'>老挝人民民主共和国 </option>
+                                    <option value='961'>黎巴嫩 </option>
+                                    <option value='1'>圣卢西亚 </option>
+                                    <option value='423'>列支敦士登 </option>
+                                    <option value='94'>斯里兰卡 </option>
+                                    <option value='231'>利比里亚 </option>
+                                    <option value='266'>莱索托 </option>
+                                    <option value='370'>立陶宛 </option>
+                                    <option value='352'>卢森堡 </option>
+                                    <option value='371'>拉脱维亚 </option>
+                                    <option value='218'>利比亚 </option>
+                                    <option value='212'>摩洛哥 </option>
+                                    <option value='377'>摩纳哥 </option>
+                                    <option value='373'>摩尔多瓦 </option>
+                                    <option value='382'>黑山共和国 </option>
+                                    <option value='599'>圣马丁 </option>
+                                    <option value='261'>马达加斯加 </option>
+                                    <option value='692'>马绍尔群岛 </option>
+                                    <option value='389'>马其顿 </option>
+                                    <option value='223'>马里 </option>
+                                    <option value='95'>缅甸 </option>
+                                    <option value='976'>蒙古 </option>
+                                    <option value='853'>中国澳门特别行政区 </option>
+                                    <option value='1'>北马里亚纳群岛 </option>
+                                    <option value='596'>马提尼克群岛 </option>
+                                    <option value='222'>毛里塔尼亚 </option>
+                                    <option value='1'>蒙塞拉特群岛 </option>
+                                    <option value='356'>马耳他 </option>
+                                    <option value='230'>毛里求斯 </option>
+                                    <option value='960'>马尔代夫 </option>
+                                    <option value='265'>马拉维 </option>
+                                    <option value='52'>墨西哥 </option>
+                                    <option value='60'>马来西亚 </option>
+                                    <option value='258'>莫桑比克 </option>
+                                    <option value='264'>纳米比亚 </option>
+                                    <option value='687'>新喀里多尼亚 </option>
+                                    <option value='227'>尼日尔 </option>
+                                    <option value='672'>诺福克岛 </option>
+                                    <option value='234'>尼日利亚 </option>
+                                    <option value='505'>尼加拉瓜 </option>
+                                    <option value='31'>荷兰 </option>
+                                    <option value='47'>挪威 </option>
+                                    <option value='977'>尼泊尔 </option>
+                                    <option value='674'>瑙鲁 </option>
+                                    <option value='683'>纽埃 </option>
+                                    <option value='64'>新西兰 </option>
+                                    <option value='968'>阿曼 </option>
+                                    <option value='507'>巴拿马 </option>
+                                    <option value='51'>秘鲁 </option>
+                                    <option value='689'>法属波利尼西亚 </option>
+                                    <option value='675'>巴布亚新几内亚 </option>
+                                    <option value='63'>菲律宾 </option>
+                                    <option value='92'>巴基斯坦 </option>
+                                    <option value='48'>波兰 </option>
+                                    <option value='508'>圣皮埃尔和密克隆 </option>
+                                    <option value='872'>皮特凯恩 </option>
+                                    <option value='1'>波多黎各 </option>
+                                    <option value='970'>巴勒斯坦领土 </option>
+                                    <option value='351'>葡萄牙 </option>
+                                    <option value='680'>帕劳 </option>
+                                    <option value='595'>巴拉圭 </option>
+                                    <option value='974'>卡塔尔 </option>
+                                    <option value='262'>留尼汪 </option>
+                                    <option value='40'>罗马尼亚 </option>
+                                    <option value='381'>塞尔维亚 </option>
+                                    <option value='7'>俄罗斯 </option>
+                                    <option value='250'>卢旺达 </option>
+                                    <option value='966'>沙特阿拉伯 </option>
+                                    <option value='677'>所罗门群岛 </option>
+                                    <option value='248'>塞舌尔群岛 </option>
+                                    <option value='249'>苏丹 </option>
+                                    <option value='46'>瑞典 </option>
+                                    <option value='65'>新加坡 </option>
+                                    <option value='290'>圣赫勒拿 </option>
+                                    <option value='386'>斯洛文尼亚 </option>
+                                    <option value='47'>斯瓦尔巴特和扬马延 </option>
+                                    <option value='421'>斯洛伐克 </option>
+                                    <option value='232'>塞拉利昂 </option>
+                                    <option value='378'>圣马力诺 </option>
+                                    <option value='221'>塞内加尔 </option>
+                                    <option value='252'>索马里 </option>
+                                    <option value='597'>苏里南 </option>
+                                    <option value='239'>圣多美和普林西比 </option>
+                                    <option value='503'>萨尔瓦多 </option>
+                                    <option value='963'>叙利亚 </option>
+                                    <option value='268'>斯威士兰 </option>
+                                    <option value='1'>特克斯和凯科斯群岛 </option>
+                                    <option value='235'>乍得 </option>
+                                    <option value='262'>法属南部领土 </option>
+                                    <option value='228'>多哥 </option>
+                                    <option value='66'>泰国 </option>
+                                    <option value='992'>塔吉克斯坦 </option>
+                                    <option value='690'>托克劳 </option>
+                                    <option value='670'>东帝汶 </option>
+                                    <option value='993'>土库曼斯坦 </option>
+                                    <option value='216'>突尼斯 </option>
+                                    <option value='676'>汤加 </option>
+                                    <option value='90'>土耳其 </option>
+                                    <option value='1'>特立尼达和多巴哥 </option>
+                                    <option value='688'>图瓦卢 </option>
+                                    <option value='886'>台湾 </option>
+                                    <option value='255'>坦桑尼亚 </option>
+                                    <option value='380'>乌克兰 </option>
+                                    <option value='256'>乌干达 </option>
+                                    <option value='699'>美国边远小岛 </option>
+                                    <option value='1'>美国 </option>
+                                    <option value='598'>乌拉圭 </option>
+                                    <option value='998'>乌兹别克斯坦 </option>
+                                    <option value='39066'>梵蒂冈 </option>
+                                    <option value='1'>圣文森特和格林纳丁斯 </option>
+                                    <option value='58'>委内瑞拉 </option>
+                                    <option value='1'>英属维京群岛 </option>
+                                    <option value='1'>美属维京群岛 </option>
+                                    <option value='84'>越南 </option>
+                                    <option value='678'>瓦努阿图 </option>
+                                    <option value='681'>瓦利斯和富图纳 </option>
+                                    <option value='685'>萨摩亚 </option>
+                                    <option value='967'>也门 </option>
+                                    <option value='262'>马约特 </option>
+                                    <option value='27'>南非 </option>
+                                    <option value='260'>赞比亚 </option>
+                                    <option value='263'>津巴布韦 </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-3 input-name">
+                                <span lang>City</span>
+                                <small>
+                                    *
+                                </small>
+                            </label>
+                            <div class="col-xs-7">
+                                <input type="text" name="city" id="city">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-3 input-name">
+                                <span lang>Industry</span>
+                                <small>
+                                    *
+                                </small>
+                            </label>
+                            <div class="col-xs-7">
+                                <select class="form-control" name="industry" id="industry">
+                                    <option value="agriculture" lang>Agriculture</option>
+                                    <option value="consulting" lang>Consultation</option>
+                                    <option value="inspections" lang>Routing inspection</option>
+                                    <option value="surveying" lang>Engineering measure</option>
+                                    <option value="construction" lang>Construction</option>
+                                    <option value="real_estate" lang>Real estate</option>
+                                    <option value="search_rescue" lang>Search&Rescue</option>
+                                    <option value="education" lang>Education</option>
+                                    <option value="mapping" lang>Surveying and mapping</option>
+                                    <option value="conservation" lang>Environment protection</option>
+                                    <option value="filmmaking" lang>Film making</option>
+                                    <option value="security" lang>Bond</option>
+                                    <option value="mining" lang>Mining</option>
+                                    <option value="other" lang>Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-3 input-name">
+                                <span lang>Occupation</span>
+                                <small>
+                                    *
+                                </small>
+                            </label>
+                            <div class="col-xs-7">
+                                <select class="form-control" name="occupation" id="occupation">
+                                    <option value="government" lang>Civil servant</option>
+                                    <option value="analyst" lang>Analyst</option>
+                                    <option value="student" lang>Student</option>
+                                    <option value="engineer" lang>Engineer</option>
+                                    <option value="architect" lang>Architecture</option>
+                                    <option value="photographer" lang>Photographer</option>
+                                    <option value="professor" lang>Professor</option>
+                                    <option value="counselor" lang>Researcher</option>
+                                    <option value="athlete" lang>Athlete</option>
+                                    <option value="sales" lang>Salesperson</option>
+                                    <option value="other" lang>Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-btns text-center">
+                            <button type="button" class="btn-cancel" lang>Back</button>
+                            <button type="button" class="btn-main btn-next" lang>Next</button>
+                        </div>
+                </section>
+                <section class="step-two" style="display: none;">
+                    <div class="verification-section">
+                            <div class="form-group row">
+                                <label class="col-xs-3 input-name">
+                                    <span lang>Phone Number</span> *
+                                </label>
+                                <div class="col-xs-6" style="width: 568px;padding-left: 0px;">
+                                    <input id="phone-number" type="number">
+                                </div>
+                                <div class="col-xs-2 " style="text-align: left;padding-left: 0px;">
+                                    <input type="button" id="number-valid-button" value="Send verification code" class="btn-main" 
+                                    style="width: 134px;" lang>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row" id="error-phone-invalid" style="display: none;">
+                                <div class="col-xs-7 col-xs-offset-3">
+                                    <div class="alert-error" lang>please input a correct telephone number</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-xs-3 input-name" for="token">
+                                    <span lang>telephone verification code</span>
+                                    <small>*</small>
+                                </label>
+                                <div class="col-xs-7">
+                                    <input id="token" type="number" lang>
+                                    <p class="input-tips" lang>The verification will time out after 2 mins</p>
+                                </div>
+                            </div>
+                            <div class="form-group row" id="error-phone-error" style="display: none;">
+                                <div class="col-xs-7 col-xs-offset-3">
+                                    <div class="alert-error" lang>Telephone verification failed</div>
+                                </div>
+                            </div>
+                            <div class="form-btns text-center">
+                                <button type="button" class="btn-cancel" lang>Back</button>
+                                <input type="button" id="phone-verify-button" value="Next" disabled="true" class="btn-main btn-next" lang/>
+                            </div>
+                    </div>
+                </section>
+                <section class="step-three" style="display: none;">
+                    <div class="header">
+                        <h3 class="title" lang>Confirm the information</h3>
+                        <p class="desc" lang>Please confirm your application information, if need, you can modify your information after submit it.</p>
+                    </div>
+                        <div class="form-group row">
+                            <label class="col-xs-6" lang>The type of developer</label>
+                            <div class="col-xs-6">
+                                <span id="sdeveloperType"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-6" lang>Last name</label>
+                            <div class="col-xs-6">
+                                <span id="slastName"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-6" lang>First name</label>
+                            <div class="col-xs-6">
+                                <span id="sfirstName"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-6" lang>Country or region</label>
+                            <div class="col-xs-6">
+                                <span id="scountry"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-6" lang>City</label>
+                            <div class="col-xs-6">
+                                <span id="scity"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-6" lang>Occupation</label>
+                            <div class="col-xs-6">
+                                <span id="sindustry"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-6" lang>Industry</label>
+                            <div class="col-xs-6">
+                                <span id="soccupation"></span>
+                            </div>
+                        </div>
+                        <div class="text-center" style="margin-top: 40px;">
+                            <button class="btn-cancel" type="button" lang>Back</button>
+                            <button class="btn-main" id="btn-final" lang>Submit</button>
+                        </div>
+                </section>
+
+                <!-- 审核通过页面 -->
+                <div class="result-section" style="display: none;">
+                  <div class="header">
+                    <h3 class="title" lang>Authentication passed</h3>
+                    <p class="desc" lang>Congratulations! Your develop Application is admitted, you can create your APP now</p>
+                  </div>
+                  <div class="guide row" style="margin-top: 100px;">
+                    <div class="col-xs-4">
+                      <a href="index.html">
+                        <div class="icon">
+                          <img src="images/home/icon_home.png">
+                        </div>
+                        <p lang>Quick Start Guide</p>
+                      </a>
+                    </div>
+                    <div class="col-xs-4">
+                      <a href="sdk.html">
+                        <div class="icon">
+                          <img src="images/home/icon_sdk.png">
+                        </div>
+                        <p lang>Know more about our SDK product</p>
+                      </a>
+                    </div>
+                    <div class="col-xs-4">
+                      <a href="personal_center.html">
+                        <div class="icon">
+                          <img src="images/home/icon_create.png">
+                        </div>
+                        <p lang>create an APP</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- footer -->
+    <iframe src="footer.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no height=380 
+        style="min-width: 1230px;">
+    </iframe>
+</body>
+<script type="text/javascript">
+var userinfo = {}; //提交的用户参数
+var tempinfo = {};//显示用户的确认信息
+var count = 120;//计时器
+$(function(){
+    if(sessionStorage.getItem('userId')==null){
+        window.location.href = "login.html";
+    }
+    $("#agree-btn").click(function(){
+        $(".agreement").hide();
+        $(".apply-steps").show();
+    });
+
+    $(".step-one .btn-cancel").click(function(){
+        $(".apply-steps").hide();
+        $(".agreement").show();
+    });
+
+    $(".step-two .btn-cancel").click(function(){
+        $(".step-two").hide();
+        $(".step-one").show();
+        $("#progressbar li:nth-child(2)").removeClass('active');
+    });
+
+    $(".step-three .btn-cancel").click(function(){
+        $(".agreement, .step-one, .step-three").hide();
+        $(".step-two").show();
+        $("#progressbar li:nth-child(3)").removeClass('active');
+    });
+
+    //选择开发者类型
+    $("#developerType").click(function(){
+        if($(this).val() == 2){
+            $("input[name='companyName']").parent().parent().removeClass('hide');
+        }else{
+            $("input[name='companyName']").parent().parent().addClass('hide');
+        }
+    });
+
+    //填写开发者信息
+    $(".step-one .btn-next").click(function(){
+        checkValue();
+        var length = $('.step-one').find('select.error , input.error').length;
+        if(length == 0){
+            userinfo = getDeveloprInfo();
+            tempinfo = getValuetext(getDeveloprInfo());
+            $(".agreement, .step-one").hide();
+            $("#progressbar li:nth-child(2)").addClass('active');
+            $(".verification-section").parent().show();
+        }
+    });
+
+    // 手机验证事件
+    $(".step-two .btn-next").click(function(){
+        console.log(userinfo);
+        verifyPhone();
+    });
+
+    // 获取手机验证码
+    $("#number-valid-button").click(function(){
+        $("#phone-verify-button").removeAttr('disabled');
+        getSmsCode();
+    });
+
+    // 提交开发者资料
+    $("#btn-final").click(function(){
+        addDevInfo(userinfo);
+    });
+    
+});
+
+function checkValue(){
+    var dev_type = $("#developerType").val();
+    $('.step-one').find('select , input').each(function() {
+        if($(this).val()==""){
+            $(this).addClass("error");
+            if(dev_type == "1"){
+                $("#companyName").removeClass("error");
+            }
+        }else{
+            $(this).removeClass("error");  
+        }
+    });
+}
+
+// 获取填写的开发者资料
+function getDeveloprInfo(){
+    var params ={};
+    params.userId = parseInt(sessionStorage.getItem("userId"));
+    params.lastName = $("input[name='lastName']").val();
+    params.firstName = $("input[name='firstName']").val();
+    params.company = $("input[name='companyName']").val();
+    params.country = $("#country").val();
+    params.city = $("input[name='city']").val();
+    params.industry = $("#industry").val();
+    params.occupation = $("#occupation").val();
+    params.developerType = $("#developerType").val();
+    return params;
+}
+function getValuetext(userinfo){
+    tempinfo = userinfo;
+    tempinfo.countrytext = $.trim($('#country  option:selected').text());
+    tempinfo.industrytext = $.trim($('#industry  option:selected').text());
+    tempinfo.occupationtext = $.trim($('#occupation  option:selected').text());
+    tempinfo.developerTypetext = $.trim($('#developerType  option:selected').text());
+    return tempinfo;
+}
+
+function makeSuerInfo(tempinfo){
+    $("#sdeveloperType").html(tempinfo.developerTypetext);
+    $("#slastName").html(tempinfo.lastName);
+    $("#sfirstName").html(tempinfo.firstName);
+    $("#scountry").html(tempinfo.countrytext);
+    $("#scity").html(tempinfo.city);
+    $("#sindustry").html(tempinfo.industrytext);
+    $("#soccupation").html(tempinfo.occupationtext);
+
+}
+// 填写开发者信息
+function addDevInfo(params){
+    $.ajax({
+        type: "post",
+        url: "/developer/user/addDevInfo",
+        contentType: "application/json",
+        dataType:"json",
+        data : JSON.stringify(params),
+        success:function(data){ 
+            console.log(data);
+            if(data.status==true){
+                sessionStorage.setItem("isDev","1");//修改已经成为开发者
+                $(".step-three").hide();
+                $(".result-section").show();
+                $("#progressbar li:nth-child(3)").addClass('active');
+            } else {
+                // alert("error:"+data.info);
+            }
+        },
+        error: function() {
+            // alert('注册失败，请重试');
+        }  
+    });    
+}
+
+//获取手机验证码
+function getSmsCode(){
+    var phone = $("#phone-number").val();
+    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+    if(phone == ""){
+        return ;
+    }else if(phone != "" && !myreg.test(phone)) {
+        $("#error-phone-invalid").show();
+        return ;
+    }else {
+        $("#error-phone-invalid").hide();
+        var params = {};
+        params.userPhone = "86"+ phone;
+        $.ajax({
+            type: "post",
+            url: "/developer/system/getSmsCode",
+            contentType: "application/json",
+            dataType:"json",
+            data : JSON.stringify(params),
+            success:function(data){ 
+                if(data.status==true){
+                    setTime();//验证码发送成功进入倒计时
+                }else{
+                // alert("error:"+data.info);
+                }
+            },
+            error: function() {
+                alert('注册失败，请重试');
+            }  
+        }); 
+    }   
+}
+
+// 验证验证码是否正确
+function verifyPhone(){
+    var params = {};
+    params.userPhone = userinfo.country + $("#phone-number").val();
+    params.verifyCode = $("#token").val();
+    $.ajax({
+        type: "post",
+        url: "/developer/system/verifySms",
+        contentType: "application/json",
+        dataType:"json",
+        data : JSON.stringify(params),
+        success:function(data){ 
+            if(data.status==true){
+                $(".agreement, .step-one, .step-two").hide();
+                $(".step-three").show();
+                makeSuerInfo(tempinfo);
+            }else{
+                // alert("error:"+data.info);
+                $("#error-phone-error").show();
+            }
+        },
+        error: function() {
+            alert('注册失败，请重试');
+        }  
+    });    
+}
+
+//倒计时
+function setTime(){
+    if(count==0){
+        $('#number-valid-button').attr('disabled',false);
+        $('#number-valid-button').removeClass('disabled');
+        $('#number-valid-button').val("发送验证码");
+        clearTimeout(t);
+        return;
+    }else{
+        $('#number-valid-button').attr('disabled',true);
+        $('#number-valid-button').addClass('disabled');
+        var text = "Regain verification code after "+count+" s";
+        if(sessionStorage.getItem("lang") == "cn"){
+            text = count+"后可重新获取";
+        }
+        $('#number-valid-button').val(text);
+        count--;
+    }
+    t = setTimeout(function(){
+        setTime();
+    },1000);
+}
+</script>
+</html>

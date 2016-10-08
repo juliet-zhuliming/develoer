@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UBTECH Developer</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" ></meta>
+    <link type="image/x-icon" rel="icon" href="images/home/logo01.png">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jwplayer-7.3.6/jwplayer.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    
+</head>
+<body>
+    <!-- 蒙层 -->
+    <div class="body-cover" style="display: none;">
+        <!-- 视频播放区域 -->
+        <div class="video-section" >
+            <span class="video-close" style="display: none;">×</span>
+            <div id="mediaplayer" style="width:100%;padding:0px;margin:0px;height:200px;"> 
+                Loading the player ...
+            </div>
+            <script type="text/javascript" src="js/jwplayer-7.3.6/jwplayer01.js"></script>
+            <script>jwplayer.key="qqB6oUcHyKFvPtcXcwYAHCxG7HmSSBTAVXXqFA==";</script>
+            <script type="text/javascript">
+                var thePlayer = jwplayer("mediaplayer").setup({
+                    flashplayer: "js/jwplayer-7.3.6/jwplayer.flash.swf",
+                    file: "images/alpha2.mp4",
+                    width: "100%",
+                    height: "500",
+                    image: "images/home/videocover.png"
+                });
+
+                //Play Pause  
+                $('.player-play, .body-cover').click(function(){  
+                    if(thePlayer.getState() != 'PLAYING'){  
+                        thePlayer.play(true);  
+                        this.value = 'Pause';  
+                    }else {  
+                        thePlayer.play(false);  
+                        this.value = 'Play';  
+                    }  
+                });  
+      
+                //Stop  
+                $('.player-stop, .body-cover').click(function(){thePlayer.stop();});
+            </script>
+        </div>
+    </div>
+    <!-- sdk 菜单 -->
+    <div class="container">
+        <div class="sdk-menu" id="sdksub" style="display: none;">
+            <iframe src="sdk_meun.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%"  scrolling=no  height=120 
+                align="center" style="min-width: 1200px;">
+            </iframe>
+        </div>
+    </div>
+    <iframe src="header.html" id="head-iframe" marginWidth=0 marginHeight=0 frameBorder=0 width="100%"  scrolling=no  
+        height=80 align="center" style="min-width: 1200px;">
+    </iframe>
+    <!-- 图片轮播区域 -->
+    <div class="banner">
+        
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" >
+                    <img src="images/home/video.png" />
+                    <div class="banner-text slidebanner" >
+                        <h2 lang>Hello,Alpha2!</h2>
+                        <p lang>Intelligent,Interactive and Expandable</p>
+                        <a class="see-video" lang>Watch the Video</a>
+                    </div>
+                </div>
+                <div class="swiper-slide" >
+                    <img src="images/home/banner.png" />
+                    <div class="banner-text">
+                        <h3 class="title-banner" lang>developer for alpha2,developer for the future</h3>
+                        <div class="be-develper">
+                            <a class="be-btn" href="apply_developer.html" target="_self" lang>Now become a developer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide"><img src="images/home/banner2.jpg" /></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next swiper-button-white" style="opacity: 0.5"></div>
+            <div class="swiper-button-prev swiper-button-white" style="opacity: 0.5"></div>
+        </div>
+        <!-- Swiper JS -->
+        <script src="js/swiper.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 0,
+            loop: true
+        });
+        </script>
+
+    </div>
+    <!-- 我们能做到 -->
+    <div class="wecan-section">
+        <div class="container">
+            <h1 class="wecan-title" lang>Alpha 2</h1>
+            <p class="wecan-desc" lang>Your New Family Member</p>
+            <div class="wecan-content">
+                <div class="robot-sound">
+                    <h3 lang>Speech Recognition</h3>
+                    <p lang>TTS,ASR,Singing,Telling stories</p>
+                </div>
+                <div class="robot-head">
+                    <h3 lang>Head's Motion</h3>
+                    <p lang>Control the motion of robot head</p>
+                    <p lang>Control by LAN or WAN</p>
+                </div>
+                <div class="robot-action">
+                    <h3 lang>Body's Motion</h3>
+                    <p lang>Control the robot moving left and right, back and forth</p>
+                    <p lang>Control by LAN or WAN</p>
+                    <p lang>Stand up after falling</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 提供的模块 -->
+    <div class="weoffer">
+        <div class="offer-box">
+            <div class="container">
+                <h3 lang>Our Modules</h1>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="sdk.html" target="_self">
+                            <img src="images/img_mobile_sdk.png" class="sdk-img">
+                            <h2 lang>Mobile SDK</h2>
+                            <p lang>This provides powerful voice features, such as voice dictation, speech synthe-sis, and semantic understanding.</p>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 ">
+                        <a href="sdk.html" target="_self">
+                            <img src="images/img_onboard_sdk.png" class="sdk-img">
+                            <h2 lang>Onboard SDK</h2>
+                            <p lang>This provides powerful voice features, such as voice dictation, speech synthe-sis, and semantic understanding.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- showcase  -->
+    <div class="section-showcase">
+        <div class="container">
+            <h1 class="section-title" lang>Best Cases</h1>
+            <h3 class="show-more" lang>More ></h3>
+            <div class="showcase-list">
+                <div class="group">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="case-box clearfix">
+                                <img src="images/home/case1.png">
+                                <div class="text">
+                                    <h1 lang>ChatPartner</h1>
+                                    <p lang>A voice-chat software that enables users to freely chat with the robot after openning it. </p>
+                                    <div class="detail">
+                                       <a href="case_detail.html" target="_self" lang>Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="case-box clearfix">
+                                    <img src="images/home/case2.png">
+                                <div class="text">
+                                    <h1 lang>Smart Camera</h1>
+                                    <p lang>A camera software that enables the robot to take photos for users, and helps the users take selfies and watch the photos.</p>
+                                    <div class="detail">
+                                       <a href="case_detail.html" target="_self" lang>Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4">
+                            <div class="case-box clearfix">
+                                <img src="images/home/case3.png">
+                                <div class="text">
+                                    <h1 lang>English Education</h1>
+                                    <p lang>A product for family English education ,designed for Chinese children( >6 years old).</p>
+                                    <div class="detail">
+                                       <a href="case_detail.html" target="_self" lang>Details</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    
+    <!-- 最新报导 -->
+    <!-- <div class="news-section">
+       <div class="container">
+            <h1 class="section-title">
+                最新报导
+                <span class="show-more">更多 ></span>
+            </h1>
+            <div class="news-content">
+                <img src="images/news.png">
+                <h2>
+                    Alpha 1S, Alpha 2, and Jimu Make a Sensational Appearance at the American International Toy Fair
+                </h2>
+                <p>
+                   2016-09-06 
+                </p>
+                <p>
+                    As America’s largest toy expo and one of the world’s top three toy shows, the American International Toy Fair took place from February 14 to February 17 this year, which has already been held for 110 sessions. Only open to professional visitors, the show drew several thousand professional buyers and toy manufacturers from all over the world.
+                </p>
+                <div class="detail">
+                   查看详情 
+                </div>
+            </div>
+       </div> 
+    </div>
+         -->
+    <iframe src="footer.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no height=380 
+        style="min-width: 1230px;">
+    </iframe>
+</body>
+</html>

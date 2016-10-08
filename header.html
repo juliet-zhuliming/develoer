@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UBT Developer</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" ></meta>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<!-- header 导航 -->
+    <nav id="site-header" class="site-header navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" target="_parent" class="logo">
+                    <img src="images/logo.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="header-navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html" target="_parent" class="" lang>home</a>
+                    </li>
+                    <li class="hovedown" id="sdk-menu">
+                        <a class="hovedown-toggle " href="javascript:void(0);">sdk<span class="caret"></span></a>
+                    </li>
+                    <li><a href="resource.html" class="" target="_parent" lang>resource</a></li>
+                    <li><a href="showcase.html" class="" target="_parent" lang>showcase</a></li>
+                    <li><a href="community.html" class="" target="_parent" lang>community</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right nav-user " id="nav-operation">
+                    <li>
+                        <a href="login.html" target="_parent" lang >login</a>
+                    </li>
+                    <li >
+                        <a href="register.html" target="_parent" class="register" lang >register</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right nav-user hide" id="userInfo">
+                    <li>
+                        <span class="span" >
+                            <a href="javascript:void(0)" target="_parent" id="userName">
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="loginout" target="_parent" id="loginout" lang>login out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+<script type="text/javascript">
+var dict = {}; 
+$(function(){
+    registerWords();
+    var current = sessionStorage.getItem("lang")|| "en";
+    setLanguage(current);
+    var uname = sessionStorage.getItem('loginName');
+    var ustatus = sessionStorage.getItem('userStatus');
+    if(uname!=null){
+        $("#nav-operation").addClass('hide');
+        $("#userInfo").removeClass('hide');
+        $("#userName").html(uname);
+    }
+    $("#loginout").click(function(){
+        $("#userInfo").addClass('hide');
+        $("#nav-operation").removeClass('hide');
+        $("#userName").html();
+        sessionStorage.clear();
+        $("#loginout").attr("href","login.html");
+    });
+    $("#userName").click(function(){
+        var isDev = sessionStorage.getItem('isDev');
+        if(ustatus == "B02"||isDev == "0"){
+            return ;
+        }else{
+            $(this).attr("href","personal_center.html");
+        }
+    });
+});
+</script>
+</html>

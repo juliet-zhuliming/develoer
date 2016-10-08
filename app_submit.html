@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UBT Developer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index1.css">
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ajaxFileUpload.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+</head>
+<body>
+    <!-- sdk 菜单 -->
+    <div class="container">
+        <div class="sdk-menu" id="sdksub" style="display: none;">
+            <iframe src="sdk_meun.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%"  scrolling=no  height=120 
+                align="center" style="min-width: 1200px;">
+            </iframe>
+        </div>
+    </div>
+    <iframe src="header.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no 
+    height=80 align="center" style="min-width: 1230px;">
+    </iframe>
+    
+    <div class="container personal-center">
+        <div class="tab">        
+            <ul id="tab" class="tab_navs">            
+                <li ><span lang>user center</span> > <span lang>app management</span></li>
+            </ul>    
+        </div>
+        <div class="header" style="text-align: center;">
+            <ul id="progressbar">
+                <li class="active" lang>Improve APP information</li>
+                <li lang>The Application is submitted for audit</li>
+                <li lang>Audit result</li>
+            </ul>
+        </div>
+        <!-- app 信息 -->
+        <div class="appsubmit-page content" style="display: none;">
+            <form class="form-horizontal" >
+                <!-- app 信息 -->
+                <div class="app-infobox">
+                    <div class="form-group">
+                        <h2 lang>APP information</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label" lang>SDK type</label>
+                        <div class="col-xs-9">
+                            <select class="form-control unedit" name="sdk-type" id="sdk-type" disabled="true"  >
+                                <option value="1">Mobile-IOS-SDK</option>
+                                <option value="2">Mobile-Android-SDK</option>
+                                <option value="3">Onboard SDK</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group sdk">
+                        <label class="col-xs-2 control-label" lang>developer platform</label>
+                        <div class="col-xs-9">
+                            <select class="form-control unedit" name="run-level" id="run-level" disabled="true">
+                                <option value="1"> Android</option>
+                                <option value="2"> iOS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group package">
+                        <label class="col-xs-2 control-label" lang>appKey</label>
+                        <div class="col-xs-9" style="padding-top: 7px;">
+                            <span id="app-key"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"><small> * </small> 
+                            <span lang>app name</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <input class="form-control"  type="text" name="app-name" id="app-name">
+                        </div>
+                    </div>
+                    <div class="form-group bundle" style="display: none;">
+                        <label class="col-xs-2 control-label">
+                            <span lang>bundleId</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <label class="control-label" lang>package name</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"><small> * </small> 
+                        <span lang>type</span></label>
+                        <div class="col-xs-9">
+                            <select class="form-control" name="app-type" id="app-type">
+                                <option value="1" lang>family entertainment</option>
+                                <option value="2" lang>education</option>
+                                <option value="3" lang>commercial performance</option>
+                                <option value="4" lang>medical care</option>
+                                <option value="5" lang>office assistant</option>
+                                <option value="6" lang>others</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group sdk">
+                        <label class="col-xs-2 control-label"><small> * </small>
+                            <span lang>app icon</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg" id="appIconPre">
+                                <input type="file" name="appIcon" id="appIcon" title=" "  />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"><small> * </small> 
+                            <span lang>description</span>
+                        </label>
+                        <div class="col-xs-9">
+                            <textarea class="form-control"  rows="4" name="app-desc" id="app-desc" maxlength="100"></textarea>
+                            <small lang>you may enter no more than 100 words at most</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- 审核信息 -->
+                <div class="review-box">
+                    <div class="form-group">
+                        <h2 lang>Audit information</h2>
+                    </div>
+                    <div class="form-group sdk">
+                        <label class="col-xs-2 control-label"><small> * </small> <span lang>Install pack</span></label>
+                        <div class="col-xs-9">
+                            <div class="divimgPre">
+                                <img src="images/personal/button_add.png" class="appimg" id="apkimg">
+                                <input type="file" name="apkfile" id="apkfile"  />
+                            </div>
+                            <!-- <span class="apkpre"></span> -->
+                            <a href="javascript:void(0)" class="apkpre" target="_blank" style="display: none">
+                                <button class="btn btn-success" lang>Download install pack</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="form-group sdk">
+                        <label class="col-xs-2 control-label"><small> * </small><span lang>APP screen-shot</span></label>
+                        <div class="col-xs-9">
+                            <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg" id="img_appScan1" >
+                                <input type="file" name="appScan1" id="appScan1" title=" " index="0"/>
+                            </div>
+                            <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg" id="img_appScan2" >
+                                <input type="file" name="appScan2" id="appScan2"  title=" " index="1"/>
+                            </div>
+                            <div class="divimgPre" >
+                                <img src="images/personal/button_add.png" class="appimg" id="img_appScan3" index="3">
+                                <input type="file" name="appScan3" id="appScan3"  title=" " index="2"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"><small> * </small> <span lang>Audit auxiliary instruction</span></label>
+                        <div class="col-xs-9">
+                            <textarea class="form-control"  rows="4" name="appResume" id="appResume"
+                            maxlength="100"></textarea>
+                            <small lang>you may enter no more than 100 words at most</small>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- 适配信息 -->
+                <div class="adapte-box">
+                    <div class="form-group">
+                        <h2 lang>Adapted Information</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label"><small> * </small><span lang>Screen size supported</span></label>
+                        <div class="col-xs-2 control-radio">
+                            <input type="radio" name="appScreen" value="0" >
+                            <span lang>All</span><br>
+                        </div>
+                        <div class="col-xs-2 control-radio">
+                            <input type="radio" name="appScreen" value="1" >
+                            <span lang>Over 480*320 pixels</span><br>
+                        </div>
+                        <div class="col-xs-2 control-radio">
+                            <input type="radio" name="appScreen" value="3" >
+                            <span lang>Over 640*480 pixels</span><br>
+                        </div>
+                        <div class="col-xs-2 control-radio">
+                            <input type="radio" name="appScreen" value="3" >
+                            <span lang>Over 960*720 pixels</span><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">
+                        <small> * </small> <span lang>Language supported</span></label>
+                        <div class="col-xs-2 control-radio">
+                            <input type="radio" name="appLanguage" value="1" >
+                            <span lang>Chinese</span><br>
+                        </div>
+                        <div class="col-xs-2 control-radio">
+                            <input type="radio" name="appLanguage" value="2" >
+                            <span lang>English</span><br>
+                        </div>
+                        <div class="col-xs-2 control-radio">
+                            <input type="radio" name="appLanguage" value="0" >
+                            <span lang>Multiple languages</span><br>
+                        </div>
+                    </div>
+                    <div class="form-group sdk">
+                        <label class="col-xs-2 control-label"><small> * </small> 
+                            <span lang>Device information</span>
+                        </label>
+                        <div class="col-xs-2 control-radio">
+                            <input type="checkbox" name="appEquipment" value="1">iPhone<br>
+                        </div>
+                        <div class="col-xs-2 control-radio">
+                            <input type="checkbox" name="appEquipment" value="2">Pad<br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="text-align: center;margin-top: 50px;">
+                    <div class="form-btns text-center">
+                        <button type="button" class="btn-cancel" data-dismiss="modal" lang>Back</button>
+                        <button type="button" class="btn-main btn-next" id="submitapp-btn" lang>Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- 提交成功页面 -->
+        <div class="success-page" style="display: none;">
+            <h2 class="success-title" lang>Your APP is successfully submitted for audit!</h2>
+            <p class="success-desc" lang>We will finish the audit within 24 hours and inform you  by e-mails or messages from the website, please note to check.</p>
+            <button class="btn btn-main btn-detail" lang>View details</button>
+        </div>
+        <!-- 审核通过页面 -->
+        <div class="success-result" style="display: none;">
+            <h2 class="success-title" lang>Congratulations! Your APP has passed the audit.</h2>
+            <button class="btn btn-main btn-detail" lang>View details</button>
+        </div>
+        <!-- 审核不通过 -->
+        <div class="fail-result" style="display: none;">
+            <h2 class="success-title" lang>Sorry to inform you that your APP failed to pass the audit.</h2>
+            <button class="btn btn-main btn-detail" lang>View details</button>
+        </div>
+    </div>
+<!-- footer -->
+    <iframe src="footer.html" marginWidth=0 marginHeight=0 frameBorder=0 width="100%" scrolling=no height=380 
+        style="min-width: 1230px;">
+    </iframe>
+
+<!-- 提交确认 -->
+<div class="modal" id="example">
+    <div class="modal-dialog" style="margin-top: 10%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+                <h4 class="modal-title" lang>Tips</h4>
+            </div>
+            <div class="modal-body">
+                <p lang>You can not modify the information after submitting it for audit, are you sure to submit?</p>
+                <input type="hidden" id="dele_appid">
+                </input>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" lang>cancel</button>
+                <button type="button" class="btn btn-primary" id="sure-submit" lang>sure</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 应用详情 -->
+<div class="modal bs-example-modal-lg in" id="appdetail_modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only" lang>Close</span>
+                </button>
+                <h4 class="modal-title" id="myLargeModalLabel" lang>APP details</h4>
+            </div>
+            <div class="modal-body">
+            <form class="form-horizontal form-detail" >
+                <div class="app-infobox">
+                    <div class="form-group">
+                        <h2 lang>APP information</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>SDK type</label>
+                        <div class="col-xs-9 control-content">
+                            <span id="s_sdkType"></span>
+                        </div>
+                    </div>
+                    <div class="form-group sdk">
+                        <label class="col-xs-3 control-label" lang>developer platform</label>
+                        <div class="col-xs-9 control-content">
+                           <span id="s_runLevel"></span>
+                        </div>
+                    </div>
+                    <div class="form-group package">
+                        <label class="col-xs-3 control-label" lang>appKey</label>
+                        <div class="col-xs-9 control-content">
+                            <span id="s_appKey"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>app name</label>
+                        <div class="col-xs-9 control-content">
+                            <span id="s_appName"></span>
+                        </div>
+                    </div>
+                    <div class="form-group bundle" style="display: none;">
+                        <label class="col-xs-3 control-label" lang>bundleId</label>
+                        <div class="col-xs-9 control-content">
+                            <span id="app-key"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>type</label>
+                        <div class="col-xs-9 control-content">
+                            <span id="s_appType"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>app icon</label>
+                        <div class="col-xs-9 control-content">
+                            <div class="divimgPre" >
+                                <img src="" class="appimg" id="s_appIconPre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>description</label>
+                        <div class="col-xs-9 control-content">
+                            <span id="s_appDesc"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 审核信息 -->
+                <div class="review-box">
+                    <div class="form-group">
+                        <h2 lang>Audit information</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Install pack</label>
+                        <div class="col-xs-9 control-content">
+                            <div class="divimgPre">
+                                <img src="" class="appimg" id="s_apk">
+                            </div>
+                            <!-- <span class="apkpre"></span> -->
+                            <a href="javascript:void(0)" class="apkpre" target="_blank">
+                                <button class="btn btn-main" lang>Download install pack</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>APP screen-shot</label>
+                        <div class="col-xs-9 control-content">
+                            <div class="divimgPre" >
+                                <img src="images/icon.png" class="appimg" id="s_img_appScan1">
+                            </div>
+                            <div class="divimgPre" >
+                                <img src="images/icon.png" class="appimg" id="s_img_appScan2">
+                            </div>
+                            <div class="divimgPre" >
+                                <img src="images/icon.png" class="appimg" id="s_img_appScan3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Audit auxiliary instruction</label>
+                        <div class="col-xs-9 control-content">
+                            <span id="s_appResume"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 适配信息 -->
+                <div class="adapte-box">
+                    <div class="form-group">
+                        <h2 lang>Adapted Information</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Screen size supported</label>
+                        <div class="col-xs-2 control-radio hide">
+                            <span id="screenObj_0" lang>All</span>
+                        </div>
+                        <div class="col-xs-2 control-radio hide">
+                            <span id="screenObj_1" lang>Over 480*320 pixels</span>
+                        </div>
+                        <div class="col-xs-2 control-radio hide">
+                            <span id="screenObj_2" lang>Over 640*480 pixels</span>
+                        </div>
+                        <div class="col-xs-2 control-radio hide">
+                            <span id="screenObj_3" lang>Over 960*720 pixels</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label" lang>Language supported</label>
+                        <div class="col-xs-2 control-radio hide">
+                            <span id="languageObj_1" lang>Chinese</span>
+                        </div>
+                        <div class="col-xs-2 control-radio hide">
+                            <span id="languageObj_2" lang>English</span>
+                        </div>
+                        <div class="col-xs-2 control-radio hide">
+                            <span id="languageObj_0" lang>Multiple languages</span>
+                        </div>
+                    </div>
+                    <div class="form-group sdk">
+                        <label class="col-xs-3 control-label"  lang>Device information</label>
+                        <div class="col-xs-2 control-radio hide">
+                            <span id="equipObj_1" lang>iPhone</span>
+                        </div>
+                        <div class="col-xs-2 control-radio hide">
+                            <span id="equipObj_2" lang>Pad</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer" >
+                <div class="text-center">
+                    <button type="button" class="btn-main btn-next" data-dismiss="modal" lang>sure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<style type="text/css">
+    .form-detail{
+        margin-top: -15px;
+        padding-top: 0px
+    }
+    .form-detail h2{
+        margin-top: 0px;
+    }
+    .form-detail .form-group {
+        margin-bottom: 6px;
+    }
+    .form-detail>.app-infobox, .form-detail>.review-box, .form-detail>.adapte-box{
+        margin-top: 15px;
+    }
+    .form-detail .control-content {
+        padding-top: 8px;
+    }
+</style>
+<script type="text/javascript">
+var apk = "";
+var appScans = [];
+var appIcon  ="";
+var appid ="";
+var sdkTypeObj ={
+    "1":"Mobile-IOS-SDK",
+    "2":"Mobile-Android-SDK",
+    "3":"Onboard SDK"
+};
+var runLevelObj ={
+    "1":"Android",
+    "2":"iOS"
+};
+var appTypeObj ={
+    "1":"家庭娱乐",
+    "2":"教育教学",
+    "3":"商业演出",
+    "4":"医疗看护",
+    "5":"办公助手",
+    "6":"其他"
+};
+var screenObj = {
+    "0":"全部",
+    "1":"480*320以上",
+    "2":"640*480以上",
+    "3":"960*720以上"
+};
+var languageObj = {
+    "0":"多语言",
+    "1":"中文",
+    "2":"英文"
+};
+var equipObj = {
+    "1":"iphone",
+    "2":"pad"
+};
+$(function(){
+    if(sessionStorage.getItem("userId") == null){
+        window.location.href = "login.html";
+    }else {
+        appid = GetQueryString("appid");
+        loadDetailApp(appid);
+    }
+
+    $('.btn-detail').click(function(){
+        loadDetailApp(appid);
+        $('#appdetail_modal').modal('show');
+    });
+    // 上传应用图标
+    $('#appIcon').change(function(){
+        uploadAppIcon();
+    });
+    // 上传apk
+    $('#apkfile').change(function(){
+        uploadApk();
+    });
+    
+    // 上传应用截图
+    $('#appScan1 , #appScan2 , #appScan3 ').change(function(){
+        var index = $(this).attr('index')
+        uploadAppScan($(this).attr('id'),index);
+    });
+
+    // 提交应用按钮触发
+    $('#submitapp-btn').click(function(){
+        $('#app-name, #run-level, #app-desc, #appResume').each(function(index, el) {
+            if($(this).val() == ""){
+                $(this).addClass("error");
+            }
+        });
+        var inputs = $(".appsubmit-page input.error , textarea.error");
+        if(inputs.length > 0){
+            return ;
+        }else {
+            $("#example").modal('show');
+        }
+    });
+    // 确认提交
+    $('#sure-submit').click(function(){
+        submitApp();
+    });
+
+    $('#app-name, #run-level, #app-desc, #appResume').blur(function() {
+        if ($(this).val() == "") {
+           $(this).addClass('error');
+        }else {
+           $(this).removeClass('error'); 
+        }
+    }).keyup(function() {
+        $(this).triggerHandler("blur");
+    }).focus(function() {
+        $(this).triggerHandler("blur");
+    }); //end blur
+
+
+});
+
+// 加载应用详情
+function loadDetailApp (id){
+    $.ajax({
+        type: "get",
+        url: "/developer/app/detail/"+id,
+        contentType: "application/json",
+        dataType: "json",
+        success: function(data) {
+            if (data.status == true) {
+                var obj= data.models;
+                console.log(obj);
+                setAppData(obj);
+            }else{
+                if(data.info == "-1"){
+                    relogin();
+                }
+            }
+        },
+        error: function() {
+            alert('加载失败，请重试');
+        }
+    });
+}
+
+// 提交应用
+function submitApp(){
+    var equips = [];
+    $("input[name='appEquipment']").each(function(){
+        if(this.checked){
+            equips.push($(this).val());
+        }
+    }); 
+    var params = {};
+    params.appName = $("#app-name").val();
+    params.appType = $("#app-type").val();
+    params.appDesc = $("#app-desc").val();
+    params.appResume = $("#appResume").val();//审核描述
+    params.appIcon = appIcon;
+    params.appScanshot = appScans.join(",");//应用截图
+    params.appPath = apk;//应用apk
+    params.appId = appid;
+    params.appScreen = $("input[name='appScreen']:checked").val();
+    params.appLanguage = $("input[name='appLanguage']:checked").val();
+    params.appEquipment = equips.join(",");
+    params.appStatus = "2";
+    $.ajax({
+        url: "/developer/app/update",
+        type: "post",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(params),
+        success: function(data) {
+            if (data.status == true) {
+                $("#example").modal('hide');
+                $(".appsubmit-page").hide();
+                $(".success-page").show();
+                $("#progressbar li:nth-child(2)").addClass('active');
+            }else{
+                alert(data);
+            }
+        },
+        error: function(data, status, e)  {
+            alert('提交失败，请重试');
+        }
+    }); 
+}
+
+// 上传应用图标
+function uploadAppIcon(){
+    $.ajaxFileUpload({
+        url: "/developer/app/uploadAppIcon",
+        type: "post",
+        dataType: "json",
+        data: "",
+        fileElementId:['appIcon'], 
+        success:function(data,status){
+            if (data.status == true) {
+                // alert("上传成功");
+                appIcon = data.models;
+                $("#appIconPre").attr("src",appIcon);
+                $("#appIcon").replaceWith('<input type="file" class="logoupfile" name="appIcon" id="appIcon"  />');
+                $('#appIcon').change(function(){
+                    uploadAppIcon();
+                });
+            }else{
+                alert(data);
+            }
+        },
+        error: function(data, status, e)  {
+            alert('上传失败，请重试');
+        }
+    }); 
+}
+
+// 上传apk
+function uploadApk(){
+    $.ajaxFileUpload({
+        url: "/developer/app/uploadApk",
+        type: "post",
+        dataType: "json",
+        data: "",
+        fileElementId:['apkfile'], 
+        success:function(data,status){
+            if (data.status == true) {
+                apk = data.models;
+                $(".apkpre").attr("href",apk);
+                $("#apkimg").attr("src","images/apk.jpg");
+                $("#apkfile").replaceWith('<input type="file" class="logoupfile" name="apkfile" id="apkfile"  />');
+                $('#apkfile').change(function(){
+                    uploadApk();
+                });
+            }else{
+                alert(data);
+            }
+        },
+        error: function(data, status, e)  {
+            alert('上传失败，请重试');
+        }
+    }); 
+}
+
+// 上传应用截图
+function uploadAppScan(id,i){
+    $.ajaxFileUpload({
+        url: "/developer/app/uploadAppScan",
+        type: "post",
+        dataType: "json",
+        data: "",
+        fileElementId:[id], 
+        success:function(data,status){
+            if (data.status == true) {
+                appScans[i] = data.models;
+                $("#img_"+id).attr("src",data.models);
+                $("#"+id).replaceWith('<input type="file" class="logoupfile" name="'+id+'" id="'+id+'" index="'+i+'" />');
+                $("#"+id).change(function(){
+                    var i = $(this).attr('index')
+                    uploadAppScan(id,i);
+                });
+            }else{
+                alert(data);
+            }
+        },
+        error: function(data, status, e)  {
+            alert('上传失败，请重试');
+        }
+    }); 
+}
+
+function setAppData(data){
+    if(data.appStatus == "2"){//审核中
+        $("#progressbar li:nth-child(2)").addClass('active');
+        $(".appsubmit-page").hide();
+        $(".success-page").show();
+    }else if(data.appStatus == "3") {//审核通过
+        $(".appsubmit-page").hide();
+        $("#progressbar li").addClass('active');
+        $(".success-result").show();
+    }else if(data.appStatus == "4") {//审核未通过
+        $(".appsubmit-page").hide();
+        $("#progressbar li").addClass('active');
+        $(".fail-result").show();
+    }else {
+        $(".appsubmit-page").show();
+    }
+    apk = "";
+    appScans = [];
+    $("#sdk-type").val(data.sdkType);
+    $("#app-name").val(data.appName);
+    $("#run-level").val(data.runLevel);
+
+    $("#app-key").html(data.appKey);
+    $("#app-type").val(data.appType);
+    $("#appIconPre").attr("src",data.appIcon);
+    appIcon = data.appIcon;
+    $("#app-desc").val(data.appDesc);
+    $(".apkpre").attr("href",data.appPath);
+    apk = data.appPath;
+    if(data.appScanshot!=null){
+        var appimgs = data.appScanshot.split(",");
+        appScans = appimgs;
+        for(var i = 0 ;i < appimgs.length;i++){
+            $("#img_appScan"+(i+1)).attr("src",appimgs[i]);
+            $("#s_img_appScan"+(i+1)).attr("src",appimgs[i]);
+        }
+    }
+    $("#appResume").val(data.appResume);
+    $("input[name='appLanguage'][value='"+data.appLanguage+"']").attr("checked",'checked'); 
+    $("input[name='appScreen'][value='0']").attr("checked",'checked');
+
+    if(data.appEquipment!=null){
+        var equips = data.appEquipment.split(",");
+        for(var i = 0 ;i < equips.length;i++){
+            $("input[name='appEquipment'][value='"+equips[i]+"']").attr("checked",'checked'); 
+        }
+    }
+    setAppDetail(data);
+}
+
+function setAppDetail(data){
+    $("#s_sdkType").html(getValueBykey(data.sdkType,sdkTypeObj));
+    $("#s_runLevel").html(getValueBykey(data.runLevel,runLevelObj));
+    $("#s_appName").html(data.appName);
+    $("#s_appKey").html(data.appKey);
+    $("#s_appType").html(getValueBykey(data.appType,appTypeObj));
+    $("#s_appDesc").html(data.appDesc);
+    $("#s_appIconPre").attr("src",data.appIcon);
+    if(data.appPath!=""){
+        $("#s_apk").attr("src","images/apk.jpg");
+    }else {
+        $("#s_apk").attr("src","");
+    }
+
+    $("#s_appResume").html(data.appResume);
+    $("#screenObj_"+data.appScreen).parent().removeClass('hide');
+    $("#languageObj_"+data.appLanguage).parent().removeClass('hide');
+    if(data.appEquipment!=null){
+        var equips = data.appEquipment.split(",");
+        for(var i = 0 ;i < equips.length;i++){
+            $("#equipObj_"+equips[i]).parent().removeClass('hide');
+        }
+    }
+    
+}
+
+function getValueBykey(key,jsonObj){
+    var result = "";
+    for(var item in jsonObj){  
+        if(item==key){  //item 表示Json串中的属性，如'name'  
+            var result=jsonObj[item];//key所对应的value  
+            break;
+        }  
+    }
+    return result; 
+}
+</script>
+</html>
